@@ -1,0 +1,12 @@
+# Copyright 2025 Shenzhen RAKwireless Technology Co., Ltd.
+# SPDX-License-Identifier: Apache-2.0
+
+if SHIELD_RAKWIRELESS_RAK19017
+
+config LED
+	default y if !MCUBOOT
+
+config PWM
+	default y if !MCUBOOT
+
+endif # SHIELD_RAKWIRELESS_RAK19017
