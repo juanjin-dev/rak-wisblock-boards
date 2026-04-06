@@ -1,0 +1,9 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+ */
+
+#include <wisblock/wisblock_slota.dtsi>
+#include <wisblock/wisblock_slotb.dtsi>
+#include <wisblock/wisblock_slotc.dtsi>
+#include <wisblock/wisblock_slotd.dtsi>
