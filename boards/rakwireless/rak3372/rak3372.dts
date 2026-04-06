@@ -1,0 +1,121 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+ */
+
+/dts-v1/;
+#include <rakwireless/rak3172.dtsi>
+#include <st/wl/stm32wle5ccux-pinctrl.dtsi>
+
+/ {
+	model = "RAK3372 WisBlock LPWAN Module";
+	compatible = "rakwireless,rak3372";
+
+
+	fstab {
+		compatible = "zephyr,fstab";
+
+		fstab_mtd: fstab-mtd {
+			compatible = "zephyr,fstab,littlefs";
+			mount-point = "/settings";
+			partition = <&storage_partition>;
+			read-size = <8>;
+			prog-size = <8>;
+			cache-size = <64>;
+			lookahead-size = <8>;
+			block-cycles = <512>;
+			automount;
+		};
+	};
+};
+
+&usart1 {
+	status = "okay";
+	pinctrl-0 = <&usart1_tx_pb6 &usart1_rx_pb7>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+};
+
+&usart2 {
+	status = "okay";
+	pinctrl-0 = <&usart2_tx_pa2 &usart2_rx_pa3>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+};
+
+&i2c2 {
+	status = "okay";
+	pinctrl-0 = <&i2c2_scl_pa12 &i2c2_sda_pa11>;
+	pinctrl-names = "default";
+	clock-frequency = <I2C_BITRATE_FAST>;
+};
+
+&spi1 {
+	status = "okay";
+	cs-gpios =
+		<&gpioa 4 GPIO_ACTIVE_LOW>,
+		<&gpiob 5 GPIO_ACTIVE_LOW>,
+		<&gpioa 8 GPIO_ACTIVE_LOW>,
+		<&gpiob 12 GPIO_ACTIVE_LOW>,
+		<&gpioa 15 GPIO_ACTIVE_LOW>,
+		<&gpioa 9 GPIO_ACTIVE_LOW>;
+	pinctrl-0 = <&spi1_nss_pa4 &spi1_sck_pa5
+			 &spi1_miso_pa6 &spi1_mosi_pa7>;
+	pinctrl-names = "default";
+};
+
+&adc1 {
+	status = "okay";
+	pinctrl-0 = <
+		&adc_in2_pb3 &adc_in3_pb4
+		&adc_in6_pa10
+	>;
+	pinctrl-names = "default";
+	st,adc-clock-source = "SYNC";
+	st,adc-prescaler = <4>;
+
+	channel@2 {
+		reg = <2>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_MAX>;
+		zephyr,resolution = <12>;
+	};
+
+	channel@3 {
+		reg = <3>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_MAX>;
+		zephyr,resolution = <12>;
+	};
+
+	channel@6 {
+		reg = <6>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_MAX>;
+		zephyr,resolution = <12>;
+	};
+
+};
+
+&timers1 {
+	status = "okay";
+	pwm1: pwm {
+		status = "okay";
+		pinctrl-0 = <&tim1_ch1_pa8 &tim1_ch2_pa9>;
+		pinctrl-names = "default";
+	};
+};
+
+&timers2 {
+	status = "okay";
+	pwm2: pwm {
+		status = "okay";
+		pinctrl-0 = <&tim2_ch1_pa0>;
+		pinctrl-names = "default";
+	};
+};
+
+#include "wisblock.dtsi"

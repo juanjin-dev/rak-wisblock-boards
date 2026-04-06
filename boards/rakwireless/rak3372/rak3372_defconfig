@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+
+# Enable Clocks
+CONFIG_CLOCK_CONTROL=y
+
+# Enable MPU
+CONFIG_ARM_MPU=y
+
+# Enable HW stack protection
+CONFIG_HW_STACK_PROTECTION=y
