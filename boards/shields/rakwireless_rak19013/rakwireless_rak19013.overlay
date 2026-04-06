@@ -1,0 +1,51 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+#include <zephyr/dt-bindings/gpio/wisblock-io-connector.h>
+#include <zephyr/dt-bindings/pwm/pwm.h>
+#include <zephyr/dt-bindings/pwm/wisblock-pwm.h>
+#include <zephyr/dt-bindings/battery/battery.h>
+
+/ {
+	rak19013_pwm_leds {
+		compatible = "pwm-leds";
+
+		wisblock_led1: rak19013_led1 {
+			status = "okay";
+			pwms = <&wisblock_pwm WISBLOCK_PWM_LED1 PWM_MSEC(5) PWM_POLARITY_NORMAL>;
+		};
+	};
+
+	aliases {
+		led0 = &wisblock_led2;
+		pwm-led0 = &wisblock_led1;
+		fuel-gauge0 = &wisblock_vbat;
+	};
+
+	rak19013_gpio_leds {
+		compatible = "gpio-leds";
+
+		wisblock_led2: rak19013_led2 {
+			status = "okay";
+			gpios = <&wisblock_io WISBLOCK_IO_LED2 GPIO_ACTIVE_HIGH>;
+		};
+	};
+
+	rak19013_vdiv: rak19013_vdiv {
+		compatible = "voltage-divider";
+		io-channels = <&wisblock_adc WISBLOCK_ADC_AIN0>;
+		output-ohms = <1500000>;
+		full-ohms = <2500000>;
+	};
+	
+	wisblock_vbat: fuel_gauge {
+		compatible = "zephyr,fuel-gauge-composite";
+		source-primary = <&rak19013_vdiv>;
+		device-chemistry = "lithium-ion-polymer";
+		ocv-capacity-table-0 =
+			<BATTERY_OCV_CURVE_LITHIUM_ION_POLYMER_DEFAULT>;
+	};
+};
