@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+
+identifier: rak3312/esp32s3/procpu
+name: AKwireless RAK3112 WisDuo LPWAN+BLE+Wi-Fi Module PROCPU
+type: mcu
+arch: xtensa
+toolchain:
+  - zephyr
+supported:
+  - gpio
+  - i2c
+  - spi
+  - watchdog
+  - regulator
+  - uart
+  - pwm
+  - pinmux
+  - nvs
+  - display
+vendor: rakwireless

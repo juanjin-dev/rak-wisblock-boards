@@ -1,0 +1,8 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+ */
+
+/dts-v1/;
+
+#include <rakwireless/rak3112_appcpu.dtsi>
