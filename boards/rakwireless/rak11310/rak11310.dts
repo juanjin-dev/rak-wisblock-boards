@@ -1,0 +1,121 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+ */
+
+/dts-v1/;
+#include <rakwireless/rak11300.dtsi>
+#include "rak11310-pinctrl.dtsi"
+
+/ {
+	model = "RAK11310 WisBlock LoRaWAN Module";
+        compatible = "rakwireless,rak11310";
+
+
+	fstab {
+		compatible = "zephyr,fstab";
+
+		fstab_mtd: fstab-mtd {
+			compatible = "zephyr,fstab,littlefs";
+			mount-point = "/settings";
+			partition = <&storage_partition>;
+			read-size = <16>;
+			prog-size = <16>;
+			cache-size = <32>;
+			lookahead-size = <32>;
+			block-cycles = <512>;
+			automount;
+		};
+	};
+};
+
+&uart0 {
+	current-speed = <115200>;
+	status = "okay";
+	pinctrl-0 = <&uart0_default>;
+	pinctrl-names = "default";
+};
+
+&uart1 {
+	current-speed = <115200>;
+	status = "okay";
+	pinctrl-0 = <&uart1_default>;
+	pinctrl-names = "default";
+};
+
+&i2c0 {
+	clock-frequency = <I2C_BITRATE_STANDARD>;
+	status = "okay";
+	pinctrl-0 = <&i2c0_default>;
+	pinctrl-names = "default";
+};
+
+&i2c1 {
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-names = "default";
+	status = "disabled";
+	clock-frequency = <I2C_BITRATE_FAST>;
+};
+
+&spi0 {
+	clock-frequency = <DT_FREQ_M(8)>;
+	status = "okay";
+	pinctrl-0 = <&spi0_default>;
+	pinctrl-names = "default";
+
+	cs-gpios =
+		<&gpio0 17 GPIO_ACTIVE_LOW>,
+		<&gpio0 6 GPIO_ACTIVE_LOW>,
+		<&gpio0 22 GPIO_ACTIVE_LOW>,
+		<&gpio0 7 GPIO_ACTIVE_LOW>,
+		<&gpio0 9 GPIO_ACTIVE_LOW>,
+		<&gpio0 8 GPIO_ACTIVE_LOW>;
+};
+
+&pwm {
+	pinctrl-0 = <&pwm_default>;
+	pinctrl-names = "default";
+};
+
+&adc {
+	status = "okay";
+	pinctrl-0 = <&adc_default>;
+	pinctrl-names = "default";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	channel@0 {
+		reg = <0>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,resolution = <12>;
+	};
+
+	channel@1 {
+		reg = <1>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,resolution = <12>;
+	};
+
+	channel@2 {
+		reg = <2>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,resolution = <12>;
+	};
+};
+
+zephyr_udc0: &usbd {
+	status = "okay";
+
+	cdc_acm_uart0: cdc_acm_uart0 {
+		status = "okay";
+		compatible = "zephyr,cdc-acm-uart";
+	};
+};
+
+#include "wisblock.dtsi"
