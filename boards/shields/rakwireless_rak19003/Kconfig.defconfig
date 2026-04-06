@@ -1,0 +1,68 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+
+if SHIELD_RAKWIRELESS_RAK19003
+
+config LED
+	default y if !MCUBOOT
+
+config PWM
+	default y if !MCUBOOT
+
+config ADC
+	default y if !MCUBOOT
+
+config SENSOR
+	default y if !MCUBOOT
+
+config FUEL_GAUGE
+	default y if !MCUBOOT
+
+config VOLTAGE_DIVIDER
+	default y if !MCUBOOT
+
+config FUEL_GAUGE_COMPOSITE
+	default y if !MCUBOOT
+
+WISBLOCK_HAS_CDC_ACM_CONSOLE := \
+	$(dt_node_has_compat,$(dt_nodelabel_path,wisblock_console),$(DT_COMPAT_ZEPHYR_CDC_ACM_UART))
+
+if $(WISBLOCK_HAS_CDC_ACM_CONSOLE) && !MCUBOOT
+
+if UDC_NRF
+
+config UDC_NRF_THREAD_STACK_SIZE
+	default 2048
+
+config USBD_THREAD_STACK_SIZE
+	default 2048
+
+endif # UDC_NRF
+
+source "$(ZEPHYR_BASE)/boards/common/usb/Kconfig.cdc_acm_serial.defconfig"
+
+config CDC_ACM_SERIAL_PID
+	default 0x0004 if !MCUBOOT
+
+config CDC_ACM_SERIAL_MANUFACTURER_STRING
+	default WISBLOCK_CORE_BOARD_VENDOR if !MCUBOOT
+
+config CDC_ACM_SERIAL_PRODUCT_STRING
+	default WISBLOCK_CORE_BOARD_NAME if !MCUBOOT
+
+endif # WISBLOCK_HAS_CDC_ACM_CONSOLE
+
+if !$(WISBLOCK_HAS_CDC_ACM_CONSOLE)
+
+config SERIAL
+	default y
+
+config CONSOLE
+	default y
+
+config UART_CONSOLE
+	default CONSOLE
+
+endif # !WISBLOCK_HAS_CDC_ACM_CONSOLE
+
+endif # SHIELD_RAKWIRELESS_RAK19003
