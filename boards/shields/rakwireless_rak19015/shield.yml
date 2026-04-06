@@ -1,0 +1,7 @@
+shield:
+  name: rakwireless_rak19015
+  full_name: RAKwireless RAK19015 WisBlock Battery Power Slot Module
+  vendor: rakwireless
+  supported_features:
+    - led
+    - adc    - fuel_gauge
