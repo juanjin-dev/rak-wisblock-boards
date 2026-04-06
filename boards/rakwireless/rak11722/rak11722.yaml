@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+
+identifier: rak11722
+name: RAK11722 WisBlock LPWAN Module
+type: mcu
+arch: arm
+ram: 384
+flash: 976
+toolchain:
+  - zephyr
+  - gnuarmemb
+supported:
+  - uart
+  - watchdog
+  - counter
+  - gpio
+  - spi
+  - i2c
+  - lora
+testing:
+  ignore_tags:
+    - net
+vendor: rakwireless

@@ -1,0 +1,121 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+ */
+
+/dts-v1/;
+#include <rakwireless/rak11720.dtsi>
+#include "rak11722-pinctrl.dtsi"
+
+/ {
+	model = "RAK11722 WisBlock LPWAN Module";
+	compatible = "rakwireless,rak11722";
+
+};
+
+&iom0 {
+	spi0: spi {
+		compatible = "ambiq,spi";
+		cs-gpios =
+			<&gpio0_31 1 GPIO_ACTIVE_LOW>,
+			<&gpio32_63 6 GPIO_ACTIVE_LOW>,
+			<&gpio0_31 4 GPIO_ACTIVE_LOW>,
+			<&gpio32_63 5 GPIO_ACTIVE_LOW>,
+			<&gpio0_31 12 GPIO_ACTIVE_LOW>,
+			<&gpio32_63 4 GPIO_ACTIVE_LOW>;
+		pinctrl-0 = <&spi0_default>;
+		pinctrl-names = "default";
+		status = "okay";
+	};
+};
+
+&iom2 {
+	i2c2: i2c {
+		compatible = "ambiq,i2c";
+		pinctrl-0 = <&i2c2_default>;
+		pinctrl-names = "default";
+		clock-frequency = <I2C_BITRATE_STANDARD>;
+		status = "okay";
+	};
+};
+
+&uart0 {
+	current-speed = <115200>;
+	pinctrl-0 = <&uart0_default>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+
+&uart1 {
+	current-speed = <115200>;
+	pinctrl-0 = <&uart1_default>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+
+&adc0 {
+	status = "okay";
+	pinctrl-0 = <&adc0_default>;
+	pinctrl-names = "default";
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	adc0_chan3: channel@3 {
+		reg = <3>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,resolution = <12>;
+	};
+
+
+	adc0_chan5: channel@5 {
+		reg = <5>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,resolution = <12>;
+	};
+
+	adc0_chan8: channel@8 {
+		reg = <8>; /* GPIO13 / ADCD0PSE8 */
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,resolution = <12>;
+	};
+
+};
+
+&timer0 {
+	pwm0: pwm {
+		timer-segment = "SEGMENT_A";
+		pwm-type = "PWM_REPEAT";
+		pinctrl-0 = <&pwm0_default>;
+		pinctrl-names = "default";
+		status = "okay";
+	};
+};
+
+
+&timer5 {
+	pwm5: pwm {
+		timer-segment = "SEGMENT_A";
+		pwm-type = "PWM_REPEAT";
+		pinctrl-0 = <&pwm5_default>;
+		pinctrl-names = "default";
+		status = "okay";
+	};
+};
+
+&timer7 {
+	pwm7: pwm {
+		timer-segment = "SEGMENT_A";
+		pwm-type = "PWM_REPEAT";
+		pinctrl-0 = <&pwm7_default>;
+		pinctrl-names = "default";
+		status = "okay";
+	};
+};
+
+#include "wisblock.dtsi"
