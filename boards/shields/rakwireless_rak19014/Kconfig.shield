@@ -1,0 +1,5 @@
+# Copyright 2025 Shenzhen RAKwireless Technology Co., Ltd.
+# SPDX-License-Identifier: Apache-2.0
+
+config SHIELD_RAKWIRELESS_RAK19014
+	def_bool $(shields_list_contains,rakwireless_rak19014)
