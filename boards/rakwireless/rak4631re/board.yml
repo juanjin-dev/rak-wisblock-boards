@@ -1,0 +1,6 @@
+board:
+  name: rak4631re
+  full_name: RAK4631 WisBlock LoRaWAN Module
+  vendor: rakwireless
+  socs:
+  - name: nrf52840

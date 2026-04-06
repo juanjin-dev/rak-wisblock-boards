@@ -1,0 +1,15 @@
+
+config BOARD_RAK4631RE
+	select SOC_NRF52840_QIAA
+
+if BOARD_RAK4631RE
+
+config WISBLOCK_CORE_BOARD_VENDOR
+	string
+	default "RAKwireless"
+
+config WISBLOCK_CORE_BOARD_NAME
+	string
+	default "RAK4631 WisBlock LoRaWAN Module"
+
+endif # BOARD_RAK4631RE
