@@ -1,0 +1,28 @@
+# Copyright (C) 2026 RAKwireless Technology Co., Ltd.
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+    ADC channels exposed on WisBlock IO connector.
+
+    This binding provides a nexus mapping for these pins where parent
+    pins 0 through 1 correspond to AIN0 through AIN1.
+
+compatible: "wisblock-adc"
+
+include: base.yaml
+
+properties:
+  io-channel-map:
+    type: compound
+    required: true
+
+  io-channel-map-mask:
+    type: array
+
+  io-channel-map-pass-thru:
+    type: array
+
+  "#io-channel-cells":
+    type: int
+    required: true
+    description: Number of items to expect in an ADC specifier
