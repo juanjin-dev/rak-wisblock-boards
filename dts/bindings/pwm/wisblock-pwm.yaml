@@ -1,0 +1,11 @@
+# Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  PWM channels exposed on WisBlock connectors.
+  WisBlock's PWM pin names shares the same definition as Digital pins one.
+    pwm-map = <9 0 0 &pwm0 1 0 0>;
+
+compatible: "wisblock-pwm"
+
+include: [base.yaml, pwm-nexus.yaml]
