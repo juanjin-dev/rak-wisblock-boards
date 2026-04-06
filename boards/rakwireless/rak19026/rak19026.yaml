@@ -1,0 +1,23 @@
+identifier: rak19026
+name: RAK19026 Meshtastic WisMesh Base Board
+type: mcu
+arch: arm
+flash: 1024
+ram: 256
+toolchain:
+  - zephyr
+  - gnuarmemb
+supported:
+  - adc
+  - ble
+  - counter
+  - gpio
+  - i2c
+  - pwm
+  - usb_device
+  - watchdog
+  - gnss
+  - lora
+  - display
+  - sensor
+vendor: rakwireless
