@@ -1,0 +1,8 @@
+shield:
+  name: rakwireless_rak19016
+  full_name: RAKwireless RAK19016 WisBlock 5-24V Power Slot Module
+  vendor: rakwireless
+  supported_features:
+    - led
+    - adc
+    - fuel_gauge
