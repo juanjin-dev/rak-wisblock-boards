@@ -1,0 +1,71 @@
+# Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Test shields for the WisBlock SPI CS accumulator (wisblock_spi_cs.dtsi).
+# Each entry exercises one signal path through the accumulator.
+
+shields:
+  # Direct IO-pin signals
+  - name: test_spi_io1
+    full_name: Test SPI CS accumulator - IO1
+    vendor: rakwireless
+  - name: test_spi_io2
+    full_name: Test SPI CS accumulator - IO2
+    vendor: rakwireless
+  - name: test_spi_io3
+    full_name: Test SPI CS accumulator - IO3
+    vendor: rakwireless
+  - name: test_spi_io4
+    full_name: Test SPI CS accumulator - IO4
+    vendor: rakwireless
+  - name: test_spi_io5
+    full_name: Test SPI CS accumulator - IO5
+    vendor: rakwireless
+  - name: test_spi_io6
+    full_name: Test SPI CS accumulator - IO6
+    vendor: rakwireless
+  - name: test_spi_spi_cs
+    full_name: Test SPI CS accumulator - dedicated SPI CS pin
+    vendor: rakwireless
+  # Slot A (GPIO1->IO2, GPIO2->IO1)
+  - name: test_spi_slota_1
+    full_name: Test SPI CS accumulator - Slot A GPIO1 (IO2)
+    vendor: rakwireless
+  - name: test_spi_slota_2
+    full_name: Test SPI CS accumulator - Slot A GPIO2 (IO1)
+    vendor: rakwireless
+  # Slot B (GPIO1->IO1, GPIO2->IO2)
+  - name: test_spi_slotb_1
+    full_name: Test SPI CS accumulator - Slot B GPIO1 (IO1)
+    vendor: rakwireless
+  - name: test_spi_slotb_2
+    full_name: Test SPI CS accumulator - Slot B GPIO2 (IO2)
+    vendor: rakwireless
+  # Slot C (GPIO1->IO4, GPIO2->IO3)
+  - name: test_spi_slotc_1
+    full_name: Test SPI CS accumulator - Slot C GPIO1 (IO4)
+    vendor: rakwireless
+  - name: test_spi_slotc_2
+    full_name: Test SPI CS accumulator - Slot C GPIO2 (IO3)
+    vendor: rakwireless
+  # Slot D (GPIO1->IO6, GPIO2->IO5)
+  - name: test_spi_slotd_1
+    full_name: Test SPI CS accumulator - Slot D GPIO1 (IO6)
+    vendor: rakwireless
+  - name: test_spi_slotd_2
+    full_name: Test SPI CS accumulator - Slot D GPIO2 (IO5)
+    vendor: rakwireless
+  # Slot E (GPIO1->IO3, GPIO2->IO4)
+  - name: test_spi_slote_1
+    full_name: Test SPI CS accumulator - Slot E GPIO1 (IO3)
+    vendor: rakwireless
+  - name: test_spi_slote_2
+    full_name: Test SPI CS accumulator - Slot E GPIO2 (IO4)
+    vendor: rakwireless
+  # Slot F (GPIO1->IO5, GPIO2->IO6)
+  - name: test_spi_slotf_1
+    full_name: Test SPI CS accumulator - Slot F GPIO1 (IO5)
+    vendor: rakwireless
+  - name: test_spi_slotf_2
+    full_name: Test SPI CS accumulator - Slot F GPIO2 (IO6)
+    vendor: rakwireless

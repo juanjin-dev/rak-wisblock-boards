@@ -1,0 +1,26 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+ *
+ * Test SPI CS accumulator shield: test_spi_spi_cs
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+#define WISBLOCK_SPI_USE_SPI_CS
+#define WISBLOCK_SPI_CS_FLAGS (GPIO_ACTIVE_LOW)
+#include <wisblock/wisblock_spi_cs.dtsi>
+
+&wisblock_spi {
+status = "okay";
+cs-gpios = WISBLOCK_CS_GPIOS;
+
+test_dev_spi_cs: spi_test@WISBLOCK_SPI_CS_IDX {
+compatible = "jedec,spi-nor";
+reg = <WISBLOCK_SPI_CS_REG>;
+spi-max-frequency = <1000000>;
+jedec-id = [ff ff ff];
+size = <DT_SIZE_K(512)>;
+status = "okay";
+};
+};
