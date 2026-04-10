@@ -16,13 +16,6 @@
 &iom0 {
 	spi0: spi {
 		compatible = "ambiq,spi";
-		cs-gpios =
-			<&gpio0_31 1 GPIO_ACTIVE_LOW>,
-			<&gpio32_63 6 GPIO_ACTIVE_LOW>,
-			<&gpio0_31 4 GPIO_ACTIVE_LOW>,
-			<&gpio32_63 5 GPIO_ACTIVE_LOW>,
-			<&gpio0_31 12 GPIO_ACTIVE_LOW>,
-			<&gpio32_63 4 GPIO_ACTIVE_LOW>;
 		pinctrl-0 = <&spi0_default>;
 		pinctrl-names = "default";
 		status = "okay";

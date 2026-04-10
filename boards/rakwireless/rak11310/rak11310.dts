@@ -63,13 +63,6 @@
 	pinctrl-0 = <&spi0_default>;
 	pinctrl-names = "default";
 
-	cs-gpios =
-		<&gpio0 17 GPIO_ACTIVE_LOW>,
-		<&gpio0 6 GPIO_ACTIVE_LOW>,
-		<&gpio0 22 GPIO_ACTIVE_LOW>,
-		<&gpio0 7 GPIO_ACTIVE_LOW>,
-		<&gpio0 9 GPIO_ACTIVE_LOW>,
-		<&gpio0 8 GPIO_ACTIVE_LOW>;
 };
 
 &pwm {
