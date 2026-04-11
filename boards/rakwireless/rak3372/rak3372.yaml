@@ -1,5 +1,5 @@
 identifier: rak3372/stm32wle5ccux
-name: RAKwireless RAK3372 WisBlock LPWAN Module
+name: RAK3372 WisBlock LPWAN Module
 type: mcu
 arch: arm
 toolchain:

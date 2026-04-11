@@ -1,5 +1,5 @@
 identifier: rak4631re/nrf52840
-name: RAKwireless RAK4631 WisBlock LoRaWAN Module
+name: RAK4631 WisBlock LoRaWAN Module
 type: mcu
 arch: arm
 flash: 1024

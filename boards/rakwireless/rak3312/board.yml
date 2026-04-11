@@ -3,7 +3,7 @@
 
 board:
   name: rak3312
-  full_name: RAKwireless RAK3112 WisDuo LPWAN+BLE+Wi-Fi Module
+  full_name: RAK3312 WisDuo LPWAN+BLE+Wi-Fi Module
   vendor: rakwireless
   socs:
   - name: esp32s3

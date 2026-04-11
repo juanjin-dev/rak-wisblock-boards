@@ -34,12 +34,14 @@ config USBD_THREAD_STACK_SIZE
 source "$(ZEPHYR_BASE)/boards/common/usb/Kconfig.cdc_acm_serial.defconfig"
 
 config CDC_ACM_SERIAL_PID
-	default 0x0004 if !MCUBOOT
+	default 0x0004
 
 config CDC_ACM_SERIAL_MANUFACTURER_STRING
-	default "RAKwireless" if !MCUBOOT
+	default "RAKwireless"
 
 config CDC_ACM_SERIAL_PRODUCT_STRING
-	default "RAK19026 WisMesh Base Board" if !MCUBOOT
+	default "RAK19026 WisMesh Base Board"
+
+endif # !MCUBOOT
 
 endif # BOARD_RAK19026

@@ -2,7 +2,7 @@
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
 
 identifier: rak3312/esp32s3/procpu
-name: AKwireless RAK3112 WisDuo LPWAN+BLE+Wi-Fi Module PROCPU
+name: RAK3312 WisDuo LPWAN+BLE+Wi-Fi Module PROCPU
 type: mcu
 arch: xtensa
 toolchain:

@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
 
-identifier: rak/rak3312/appcpu
-name: RAKwireless RAK3112 WisDuo LPWAN+BLE+Wi-Fi Module APPCPU
+identifier: rak3312/esp32s3/appcpu
+name: RAK3312 WisDuo LPWAN+BLE+Wi-Fi Module APPCPU
 type: mcu
 arch: xtensa
 toolchain:

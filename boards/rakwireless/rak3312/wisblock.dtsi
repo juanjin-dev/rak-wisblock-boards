@@ -6,7 +6,6 @@
 #include <zephyr/dt-bindings/gpio/wisblock-io-connector.h>
 #include <zephyr/dt-bindings/adc/wisblock-adc.h>
 #include <zephyr/dt-bindings/pwm/wisblock-pwm.h>
-#include <zephyr/dt-bindings/spi/wisblock-spi.h>
 
 / {
 	wisblock_io: wisblock_io {
