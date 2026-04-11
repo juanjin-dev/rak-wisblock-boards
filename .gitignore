@@ -36,6 +36,7 @@ scripts/gen_idt/gen_idt
 coverage-report
 doc-coverage.info
 doc/_build
+doc/_generated
 doc/doxygen
 doc/xml
 doc/html
