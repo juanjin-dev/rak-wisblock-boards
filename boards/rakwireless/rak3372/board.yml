@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+
 board:
   name: rak3372
   full_name: RAKwireless RAK3372 WisBlock LPWAN Module

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+
 shield:
   name: rakwireless_rak19007
   full_name: RAKwireless RAK19007 WisBlock Base Board 2nd Gen

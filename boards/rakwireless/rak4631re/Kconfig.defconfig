@@ -1,9 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
 
-if SHIELD_RAKWIRELESS_RAK19011
+if BOARD_RAK4631RE
 
-config INPUT
-	default y if !MCUBOOT
-
-endif # SHIELD_RAKWIRELESS_RAK19011
+endif # BOARD_RAK4631RE

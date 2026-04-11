@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
  */
 
 #include <zephyr/dt-bindings/gpio/wisblock-io-connector.h>
@@ -46,13 +46,13 @@
 			<WISBLOCK_IO_IO6	0	&gpio1	7	0>; /* GPIO39 */
 	};
 
-		wisblock_adc: wisblock_adc {
-			compatible = "wisblock-adc";
-			#io-channel-cells = <1>;
-			io-channel-map =
-				<WISBLOCK_ADC_AIN0	&adc0	0>,
-				<WISBLOCK_ADC_AIN1	&adc0	1>;
-		};
+	wisblock_adc: wisblock_adc {
+		compatible = "wisblock-adc";
+		#io-channel-cells = <1>;
+		io-channel-map =
+			<WISBLOCK_ADC_AIN0	&adc0	0>,
+			<WISBLOCK_ADC_AIN1	&adc0	1>;
+	};
 
 	wisblock_pwm: wisblock_pwm {
 		compatible = "wisblock-pwm";

@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2026 RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
  */
 
 /dts-v1/;
@@ -151,26 +151,26 @@
 
 &adc {
 	status = "okay";
-        #address-cells = <1>;
+	#address-cells = <1>;
 	#size-cells = <0>;
 
-        channel@2 {
-                reg = <2>;
+	channel@2 {
+		reg = <2>;
 		zephyr,gain = "ADC_GAIN_1_6";
 		zephyr,resolution = <12>;
 		zephyr,reference = "ADC_REF_INTERNAL";
 		zephyr,acquisition-time = <ADC_ACQ_TIME_MAX>;
 		zephyr,input-positive = <NRF_SAADC_AIN2>;
-        };
+	};
 
-        channel@3 {
-                reg = <3>;
+	channel@3 {
+		reg = <3>;
 		zephyr,gain = "ADC_GAIN_1_6";
 		zephyr,resolution = <12>;
 		zephyr,reference = "ADC_REF_INTERNAL";
 		zephyr,acquisition-time = <ADC_ACQ_TIME_MAX>;
 		zephyr,input-positive = <NRF_SAADC_AIN3>;
-        };
+	};
 
 	channel@7 {
 		reg = <7>;

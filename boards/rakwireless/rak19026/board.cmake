@@ -1,5 +1,5 @@
-# Copyright (c) 2026 RAKwireless Technology Co., Ltd.
 # SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
 
 board_runner_args(jlink "--device=nRF52840_xxAA" "--speed=4000")
 board_runner_args(pyocd "--target=nrf52840" "--frequency=4000000")

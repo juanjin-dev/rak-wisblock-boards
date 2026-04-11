@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+
 
 config BOARD_RAK3401
 	select SOC_NRF52840_QIAA
