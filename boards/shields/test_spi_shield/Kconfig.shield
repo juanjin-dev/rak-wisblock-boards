@@ -1,0 +1,59 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+
+config SHIELD_TEST_SPI_IO1
+	def_bool $(shields_list_contains,test_spi_io1)
+
+config SHIELD_TEST_SPI_IO2
+	def_bool $(shields_list_contains,test_spi_io2)
+
+config SHIELD_TEST_SPI_IO3
+	def_bool $(shields_list_contains,test_spi_io3)
+
+config SHIELD_TEST_SPI_IO4
+	def_bool $(shields_list_contains,test_spi_io4)
+
+config SHIELD_TEST_SPI_IO5
+	def_bool $(shields_list_contains,test_spi_io5)
+
+config SHIELD_TEST_SPI_IO6
+	def_bool $(shields_list_contains,test_spi_io6)
+
+config SHIELD_TEST_SPI_SPI_CS
+	def_bool $(shields_list_contains,test_spi_spi_cs)
+
+config SHIELD_TEST_SPI_SLOTA_1
+	def_bool $(shields_list_contains,test_spi_slota_1)
+
+config SHIELD_TEST_SPI_SLOTA_2
+	def_bool $(shields_list_contains,test_spi_slota_2)
+
+config SHIELD_TEST_SPI_SLOTB_1
+	def_bool $(shields_list_contains,test_spi_slotb_1)
+
+config SHIELD_TEST_SPI_SLOTB_2
+	def_bool $(shields_list_contains,test_spi_slotb_2)
+
+config SHIELD_TEST_SPI_SLOTC_1
+	def_bool $(shields_list_contains,test_spi_slotc_1)
+
+config SHIELD_TEST_SPI_SLOTC_2
+	def_bool $(shields_list_contains,test_spi_slotc_2)
+
+config SHIELD_TEST_SPI_SLOTD_1
+	def_bool $(shields_list_contains,test_spi_slotd_1)
+
+config SHIELD_TEST_SPI_SLOTD_2
+	def_bool $(shields_list_contains,test_spi_slotd_2)
+
+config SHIELD_TEST_SPI_SLOTE_1
+	def_bool $(shields_list_contains,test_spi_slote_1)
+
+config SHIELD_TEST_SPI_SLOTE_2
+	def_bool $(shields_list_contains,test_spi_slote_2)
+
+config SHIELD_TEST_SPI_SLOTF_1
+	def_bool $(shields_list_contains,test_spi_slotf_1)
+
+config SHIELD_TEST_SPI_SLOTF_2
+	def_bool $(shields_list_contains,test_spi_slotf_2)
