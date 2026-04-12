@@ -8,14 +8,17 @@ arch: xtensa
 toolchain:
   - zephyr
 supported:
+  - adc
+  - counter
+  - entropy
   - gpio
   - i2c
-  - spi
-  - watchdog
-  - regulator
-  - uart
-  - pwm
-  - pinmux
   - nvs
+  - pinmux
+  - pwm
+  - regulator
+  - spi
+  - uart
+  - watchdog
   - display
 vendor: rakwireless

@@ -16,6 +16,7 @@ supported:
   - pwm
   - usb_device
   - watchdog
+  - fuel_gauge
   - gnss
   - lora
   - display

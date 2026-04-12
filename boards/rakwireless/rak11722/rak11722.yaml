@@ -11,12 +11,14 @@ toolchain:
   - zephyr
   - gnuarmemb
 supported:
-  - uart
-  - watchdog
+  - adc
   - counter
   - gpio
-  - spi
   - i2c
+  - pwm
+  - spi
+  - uart
+  - watchdog
   - lora
 testing:
   ignore_tags:
