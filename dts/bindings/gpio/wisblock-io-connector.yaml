@@ -7,3 +7,29 @@ description: |
 compatible: "wisblock-io-connector"
 
 include: [gpio-nexus.yaml, base.yaml]
+
+properties:
+  has-sw1:
+    type: boolean
+    description: |
+      Present if the board physically wires pin 10 (SW1) of the WisBlock IO
+      slot to the MCU. Not all WisBlock Core modules expose this signal.
+      Shields that provide a user button through &wisblock_io should check
+      for this property to determine whether a no-SW1 overlay variant is
+      needed.
+
+  has-led3:
+    type: boolean
+    description: |
+      Present if the board physically wires pin 16 (LED3) of the WisBlock IO
+      slot to the MCU. Not all WisBlock Core modules expose this signal.
+      Shields that drive a third user LED through &wisblock_io should check
+      for this property.
+
+  has-io7:
+    type: boolean
+    description: |
+      Present if the board physically wires pin 24 (IO7) of the WisBlock IO
+      slot to the MCU. On some Core modules this pin is used as BOOT0 or left
+      unconnected. Shields that use IO7 as a general-purpose IO through
+      &wisblock_io should check for this property.

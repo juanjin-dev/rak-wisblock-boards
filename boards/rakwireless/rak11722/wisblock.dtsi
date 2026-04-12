@@ -35,6 +35,8 @@
 			<WISBLOCK_IO_RXD1	0	&gpio32_63	11	0>,
 			<WISBLOCK_IO_IO5	0	&gpio0_31	12	0>,
 			<WISBLOCK_IO_IO6	0	&gpio32_63	4	0>;
+
+		has-io7;
 	};
 
 		wisblock_adc: wisblock_adc {

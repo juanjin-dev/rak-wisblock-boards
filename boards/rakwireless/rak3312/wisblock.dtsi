@@ -43,6 +43,9 @@
 			<WISBLOCK_IO_I2C2_SCL	0	&gpio0	18	0>, /* GPIO18 */
 			<WISBLOCK_IO_IO5	0	&gpio1	6	0>, /* GPIO38 */
 			<WISBLOCK_IO_IO6	0	&gpio1	7	0>; /* GPIO39 */
+
+		has-sw1;
+		has-led3;
 	};
 
 	wisblock_adc: wisblock_adc {
