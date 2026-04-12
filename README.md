@@ -1,5 +1,11 @@
 # Pre-upstream Testbed for WisBlock Zephyr Support
 
+> **⚠️ DO NOT submit changes from this repository to Zephyr upstream without
+> explicit sign-off from the maintainer.**
+> The hardware interface contracts are not yet finalized and the software has
+> not been fully validated. Premature upstream submission will be rejected and
+> may harm the platform's upstream track record.
+
 Out-of-tree Zephyr module providing board and shield definitions for the
 RAKwireless WisBlock ecosystem. Code here is being validated before submission
 to Zephyr upstream.
