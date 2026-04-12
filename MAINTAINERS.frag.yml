@@ -1,0 +1,17 @@
+WisBlock Platforms:
+  status: maintained
+  maintainers:
+    - juanjin-dev
+  files:
+    - boards/rakwireless/rak3312/
+    - boards/rakwireless/rak3372/
+    - boards/rakwireless/rak3401/
+    - boards/rakwireless/rak4631/
+    - boards/rakwireless/rak11310/
+    - boards/rakwireless/rak11722/
+    - boards/rakwireless/rak19026/
+    - boards/shields/rakwireless_*/
+    - dts/bindings/
+    - dts/common/wisblock/
+    - dts/vendor/rakwireless/
+    - snippets/
