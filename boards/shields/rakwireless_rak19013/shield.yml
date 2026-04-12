@@ -6,4 +6,5 @@ shield:
   full_name: RAKwireless RAK19013 WisBlock LiPo Solar Power Slot Module
   vendor: rakwireless
   supported_features:
-    - gpio    - fuel_gauge
+    - gpio
+    - fuel_gauge

@@ -7,4 +7,5 @@ shield:
   vendor: rakwireless
   supported_features:
     - led
-    - adc    - fuel_gauge
+    - adc
+    - fuel_gauge

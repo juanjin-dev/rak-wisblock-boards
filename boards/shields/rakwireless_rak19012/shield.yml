@@ -6,6 +6,8 @@ shield:
   full_name: RAKwireless RAK19012 WisBlock USB LiPo Solar Power Slot Module
   vendor: rakwireless
   supported_features:
-    - console
+    - gpio
     - led
+    - serial
+    - usb
     - fuel_gauge

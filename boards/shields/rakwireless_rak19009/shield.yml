@@ -7,3 +7,4 @@ shield:
   vendor: rakwireless
   supported_features:
     - gpio
+    - fuel_gauge

@@ -8,4 +8,5 @@ shield:
   supported_features:
     - gpio
     - led
-    - serial    - fuel_gauge
+    - serial
+    - fuel_gauge
