@@ -1,10 +1,15 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
 
-shield:
-  name: rakwireless_rak19011
-  full_name: RAKwireless RAK19011 WisBlock Dual IO Base Board with Power Slot
-  vendor: rakwireless
-  supported_features:
-    - gpio
-    - input
+shields:
+  - name: rakwireless_rak19011
+    full_name: RAKwireless RAK19011 WisBlock Dual IO Base Board with Power Slot
+    vendor: rakwireless
+    supported_features:
+      - gpio
+  - name: rakwireless_rak19011_sw1
+    full_name: RAKwireless RAK19011 WisBlock Dual IO Base Board with Power Slot (with SW1)
+    vendor: rakwireless
+    supported_features:
+      - gpio
+      - input

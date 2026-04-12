@@ -1,0 +1,21 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ */
+
+#include "rakwireless_rak19001_common.dtsi"
+
+/ {
+	aliases {
+		sw0 = &wisblock_sw1;
+	};
+
+	rak19001_keys {
+		compatible = "gpio-keys";
+
+		wisblock_sw1: rak19001_sw1 {
+			gpios = <&wisblock_io WISBLOCK_IO_SW1 GPIO_ACTIVE_LOW>;
+			zephyr,code = <INPUT_KEY_0>;
+		};
+	};
+};

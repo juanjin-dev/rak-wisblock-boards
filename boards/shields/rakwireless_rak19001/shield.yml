@@ -1,11 +1,17 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
 
-shield:
-  name: rakwireless_rak19001
-  full_name: RAKwireless RAK19001 WisBlock Dual IO Base Board
-  vendor: rakwireless
-  supported_features:
-    - led
-    - input
-    - fuel_gauge
+shields:
+  - name: rakwireless_rak19001
+    full_name: RAKwireless RAK19001 WisBlock Dual IO Base Board
+    vendor: rakwireless
+    supported_features:
+      - led
+      - fuel_gauge
+  - name: rakwireless_rak19001_sw1
+    full_name: RAKwireless RAK19001 WisBlock Dual IO Base Board (with SW1)
+    vendor: rakwireless
+    supported_features:
+      - led
+      - input
+      - fuel_gauge

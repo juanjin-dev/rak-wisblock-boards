@@ -2,4 +2,9 @@
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
 
 config SHIELD_RAKWIRELESS_RAK19001
-	def_bool $(shields_list_contains,rakwireless_rak19001)
+	def_bool $(shields_list_contains,rakwireless_rak19001) || \
+	         $(shields_list_contains,rakwireless_rak19001_sw1)
+
+config SHIELD_RAKWIRELESS_RAK19001_SW1
+	def_bool $(shields_list_contains,rakwireless_rak19001_sw1)
+	select SHIELD_RAKWIRELESS_RAK19001
