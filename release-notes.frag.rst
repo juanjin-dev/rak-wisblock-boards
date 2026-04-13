@@ -50,7 +50,7 @@ Other notable changes
 
   A ``wisblock-console`` snippet is provided to redirect the Zephyr console to
   the WisBlock UART interface when building applications that do not use a Base
-  board shield with USB CDC ACM console routing.
+  board shield with USB console routing.
 
 * WisBlock DT Bindings and Pin Headers
 
