@@ -1,9 +1,31 @@
-# SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+# SPDX-License-Identifier: Apache-2.0
 
 description: |
-  RAKwireless WisBlock Sensor Slot GPIO bindings
-  
+  GPIO pins exposed on a WisBlock sensor slot connector.
+
+  WisBlock Base boards provide between two and six sensor slots (A through F).
+  Each slot carries a 10-pin board-to-board connector with a common pinout
+  shared across all slot positions. This binding provides a nexus mapping for
+  those 10 pins, where parent pin indices correspond to the WISBLOCK_SLOT_*
+  constants defined in
+  <zephyr/dt-bindings/gpio/wisblock-slot-connector.h>:
+
+    0   TXD       UART TX
+    1   SPI_CS    SPI chip select
+    2   SPI_CLK   SPI clock
+    3   SPI_MISO  SPI MISO
+    4   SPI_MOSI  SPI MOSI
+    5   I2C_SCL   I2C SCL
+    6   I2C_SDA   I2C SDA
+    7   GPIO1     General-purpose GPIO1
+    8   GPIO2     General-purpose GPIO2
+    9   RXD       UART RX
+
+  Each WisBlock Base board instantiates one node per slot using this
+  binding (e.g. wisblock_slota, wisblock_slotb, ...) and maps the logical
+  slot pins to the underlying SoC GPIO lines via wisblock_io.
+
 compatible: "wisblock-slot-connector"
 
 include: [gpio-nexus.yaml, base.yaml]

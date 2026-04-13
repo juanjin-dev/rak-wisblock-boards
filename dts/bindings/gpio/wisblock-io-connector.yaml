@@ -1,8 +1,45 @@
-# SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+# SPDX-License-Identifier: Apache-2.0
 
 description: |
-  RAKwireless WisBlock Connector GPIO bindings
+  GPIO pins exposed on the WisBlock IO connector.
+
+  The WisBlock IO connector is a 40-pin board-to-board connector that
+  carries power, UART, SPI, I2C, analog inputs, and general-purpose
+  GPIO signals between a WisBlock Core module and a WisBlock Base board.
+
+  This binding provides a nexus mapping for 25 logical pins where parent
+  pin indices correspond to the WISBLOCK_IO_* constants defined in
+  <zephyr/dt-bindings/gpio/wisblock-io-connector.h>:
+
+    0   SW1       User button
+    1   TXD0      UART0 TX
+    2   RXD0      UART0 RX
+    3   LED1      User LED 1
+    4   LED2      User LED 2
+    5   LED3      User LED 3 (optional, see has-led3)
+    6   I2C1_SDA  I2C bus 1 SDA
+    7   I2C1_SCL  I2C bus 1 SCL
+    8   AIN0      Analog input 0
+    9   AIN1      Analog input 1
+    10  IO7       General-purpose IO7 (optional, see has-io7)
+    11  SPI_CS    SPI chip select
+    12  SPI_CLK   SPI clock
+    13  SPI_MISO  SPI MISO
+    14  SPI_MOSI  SPI MOSI
+    15  IO1       General-purpose IO1
+    16  IO2       General-purpose IO2
+    17  IO3       General-purpose IO3
+    18  IO4       General-purpose IO4
+    19  TXD1      UART1 TX
+    20  RXD1      UART1 RX
+    21  I2C2_SDA  I2C bus 2 SDA
+    22  I2C2_SCL  I2C bus 2 SCL
+    23  IO5       General-purpose IO5
+    24  IO6       General-purpose IO6
+
+  Not all WisBlock Core modules wire every pin. The has-sw1, has-led3,
+  and has-io7 properties indicate which optional signals are present.
 
 compatible: "wisblock-io-connector"
 
@@ -12,8 +49,8 @@ properties:
   has-sw1:
     type: boolean
     description: |
-      Present if the board physically wires pin 10 (SW1) of the WisBlock IO
-      slot to the MCU. Not all WisBlock Core modules expose this signal.
+      Present if the board physically wires SW1 (pin 0) of the WisBlock IO
+      connector to the MCU. Not all WisBlock Core modules expose this signal.
       Shields that provide a user button through &wisblock_io should check
       for this property to determine whether a no-SW1 overlay variant is
       needed.
@@ -21,15 +58,15 @@ properties:
   has-led3:
     type: boolean
     description: |
-      Present if the board physically wires pin 16 (LED3) of the WisBlock IO
-      slot to the MCU. Not all WisBlock Core modules expose this signal.
+      Present if the board physically wires LED3 (pin 5) of the WisBlock IO
+      connector to the MCU. Not all WisBlock Core modules expose this signal.
       Shields that drive a third user LED through &wisblock_io should check
       for this property.
 
   has-io7:
     type: boolean
     description: |
-      Present if the board physically wires pin 24 (IO7) of the WisBlock IO
-      slot to the MCU. On some Core modules this pin is used as BOOT0 or left
-      unconnected. Shields that use IO7 as a general-purpose IO through
+      Present if the board physically wires IO7 (pin 10) of the WisBlock IO
+      connector to the MCU. On some Core modules this pin is used as BOOT0 or
+      left unconnected. Shields that use IO7 as a general-purpose IO through
       &wisblock_io should check for this property.

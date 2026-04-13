@@ -1,10 +1,29 @@
-# SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+# SPDX-License-Identifier: Apache-2.0
 
 description: |
-  PWM channels exposed on WisBlock connectors.
-  WisBlock's PWM pin names shares the same definition as Digital pins one.
-    pwm-map = <9 0 0 &pwm0 1 0 0>;
+  PWM channels exposed on the WisBlock IO connector.
+
+  WisBlock Core modules can expose PWM-capable lines through the WisBlock
+  IO connector. This binding provides a nexus mapping where parent pin
+  indices correspond to the WISBLOCK_PWM_* constants defined in
+  <zephyr/dt-bindings/pwm/wisblock-pwm.h>:
+
+    0   LED1  PWM channel routed to LED1
+    1   IO1   PWM channel routed to IO1
+    2   IO2   PWM channel routed to IO2
+    3   IO3   PWM channel routed to IO3
+    4   IO5   PWM channel routed to IO5
+    5   IO6   PWM channel routed to IO6
+
+  Example usage in a WisBlock Core board file:
+
+    wisblock_pwm: wisblock-pwm {
+      compatible = "wisblock-pwm";
+      pwm-map = <0 0 0 &pwm0 0 0 0>,
+                <1 0 0 &pwm0 1 0 0>;
+      #pwm-cells = <3>;
+    };
 
 compatible: "wisblock-pwm"
 
