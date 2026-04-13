@@ -21,7 +21,7 @@
  *   #include <wisblock/wisblock_spi_cs.dtsi>
  *
  *   &wisblock_spi {
- *       cs-gpios = WISBLOCK_CS_GPIOS;
+ *       cs-gpios = WISBLOCK_SPI_CS_GPIOS;
  *       my_dev: my_dev@WISBLOCK_SPI_IO1_IDX {
  *           reg = <WISBLOCK_SPI_IO1_REG>;
  *       };
@@ -62,7 +62,7 @@
  *   2. Assigns the next available slot index to the signal.
  *   3. Stores the phandle cell in _WISBLOCK_SPI_CS_GPIOS_N using &wisblock_io
  *      directly so slot-aliased signals resolve without double indirection.
- *   4. Rebuilds WISBLOCK_CS_GPIOS from all occupied slots.
+ *   4. Rebuilds WISBLOCK_SPI_CS_GPIOS from all occupied slots.
  *
  * DTS property assignment uses last-writer-wins semantics. The cs-gpios line
  * in the last shield overlay always carries the complete array that covers
@@ -1097,41 +1097,41 @@
 #endif /* SLOTF_GPIO2 */
 
 /*
- * Rebuild WISBLOCK_CS_GPIOS from all occupied slots.
+ * Rebuild WISBLOCK_SPI_CS_GPIOS from all occupied slots.
  *
  * Runs on every include so the macro always reflects the accumulated state
  * at that textual position in the concatenated overlay file. DTS
  * last-writer-wins means the final shield's cs-gpios assignment contains
  * the complete array for all shields combined.
  */
-#undef WISBLOCK_CS_GPIOS
+#undef WISBLOCK_SPI_CS_GPIOS
 #if   WISBLOCK_SPI_CS_COUNT == 1
-# define WISBLOCK_CS_GPIOS \
+# define WISBLOCK_SPI_CS_GPIOS \
 	_WISBLOCK_SPI_CS_GPIOS_0
 #elif WISBLOCK_SPI_CS_COUNT == 2
-# define WISBLOCK_CS_GPIOS \
+# define WISBLOCK_SPI_CS_GPIOS \
 	_WISBLOCK_SPI_CS_GPIOS_0, \
 	_WISBLOCK_SPI_CS_GPIOS_1
 #elif WISBLOCK_SPI_CS_COUNT == 3
-# define WISBLOCK_CS_GPIOS \
+# define WISBLOCK_SPI_CS_GPIOS \
 	_WISBLOCK_SPI_CS_GPIOS_0, \
 	_WISBLOCK_SPI_CS_GPIOS_1, \
 	_WISBLOCK_SPI_CS_GPIOS_2
 #elif WISBLOCK_SPI_CS_COUNT == 4
-# define WISBLOCK_CS_GPIOS \
+# define WISBLOCK_SPI_CS_GPIOS \
 	_WISBLOCK_SPI_CS_GPIOS_0, \
 	_WISBLOCK_SPI_CS_GPIOS_1, \
 	_WISBLOCK_SPI_CS_GPIOS_2, \
 	_WISBLOCK_SPI_CS_GPIOS_3
 #elif WISBLOCK_SPI_CS_COUNT == 5
-# define WISBLOCK_CS_GPIOS \
+# define WISBLOCK_SPI_CS_GPIOS \
 	_WISBLOCK_SPI_CS_GPIOS_0, \
 	_WISBLOCK_SPI_CS_GPIOS_1, \
 	_WISBLOCK_SPI_CS_GPIOS_2, \
 	_WISBLOCK_SPI_CS_GPIOS_3, \
 	_WISBLOCK_SPI_CS_GPIOS_4
 #elif WISBLOCK_SPI_CS_COUNT == 6
-# define WISBLOCK_CS_GPIOS \
+# define WISBLOCK_SPI_CS_GPIOS \
 	_WISBLOCK_SPI_CS_GPIOS_0, \
 	_WISBLOCK_SPI_CS_GPIOS_1, \
 	_WISBLOCK_SPI_CS_GPIOS_2, \
@@ -1139,7 +1139,7 @@
 	_WISBLOCK_SPI_CS_GPIOS_4, \
 	_WISBLOCK_SPI_CS_GPIOS_5
 #elif WISBLOCK_SPI_CS_COUNT == 7
-# define WISBLOCK_CS_GPIOS \
+# define WISBLOCK_SPI_CS_GPIOS \
 	_WISBLOCK_SPI_CS_GPIOS_0, \
 	_WISBLOCK_SPI_CS_GPIOS_1, \
 	_WISBLOCK_SPI_CS_GPIOS_2, \

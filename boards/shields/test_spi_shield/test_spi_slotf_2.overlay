@@ -13,7 +13,7 @@
 
 &wisblock_spi {
 	status = "okay";
-	cs-gpios = WISBLOCK_CS_GPIOS;
+	cs-gpios = WISBLOCK_SPI_CS_GPIOS;
 
 	test_dev_slotf_2: spi_test@WISBLOCK_SPI_SLOTF_GPIO2_IDX {
 		compatible = "jedec,spi-nor";
