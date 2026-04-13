@@ -21,6 +21,12 @@ RAK19011, RAK19012, RAK19013, RAK19014, RAK19015, RAK19016, RAK19017
 Functional peripheral shields (sensors, communication modules) are maintained
 out-of-tree in a companion repository and are not part of this submission.
 
+**Note on RAK4631 naming**: RAK4631 is submitted as ``rak4631re`` to avoid
+conflicting with the existing ``rak4631`` board already present in the Zephyr
+tree (a HW Model v1 legacy implementation). Coordination with the existing
+board's maintainer regarding deprecation or coexistence is ongoing and will be
+resolved before this PR is merged.
+
 ### Hardware Semantic Mapping
 
 The hardware is abstracted into four structural layers:
