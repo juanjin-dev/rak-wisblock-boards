@@ -6,7 +6,7 @@ New Boards
    * :zephyr:board:`rak3312` (``rak3312/esp32s3/procpu``, ``rak3312/esp32s3/appcpu``)
    * :zephyr:board:`rak3372` (``rak3372/stm32wle5ccux``)
    * :zephyr:board:`rak3401` (``rak3401/nrf52840``)
-   * :zephyr:board:`rak4631` (``rak4631/nrf52840``)
+   * :zephyr:board:`rak4631re` (``rak4631re/nrf52840``)
    * :zephyr:board:`rak11310` (``rak11310``)
    * :zephyr:board:`rak11722` (``rak11722``)
    * :zephyr:board:`rak19026` (``rak19026``)
@@ -51,3 +51,11 @@ Other notable changes
   A ``wisblock-console`` snippet is provided to redirect the Zephyr console to
   the WisBlock UART interface when building applications that do not use a Base
   board shield with USB CDC ACM console routing.
+
+* WisBlock DT Bindings and Pin Headers
+
+  New devicetree bindings are added under ``dts/bindings/`` for the WisBlock IO
+  connector (``wisblock-io-connector``), slot connector
+  (``wisblock-slot-connector``), ADC nexus (``wisblock-adc``), and PWM nexus
+  (``wisblock-pwm``). Corresponding pin-index header files are added under
+  ``include/zephyr/dt-bindings/`` for GPIO, ADC, and PWM nexus consumers.
