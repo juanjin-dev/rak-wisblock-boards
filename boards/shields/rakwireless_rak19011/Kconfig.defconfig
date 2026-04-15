@@ -3,11 +3,11 @@
 
 if SHIELD_RAKWIRELESS_RAK19011
 
-endif # SHIELD_RAKWIRELESS_RAK19011
-
-if SHIELD_RAKWIRELESS_RAK19011_SW1
+if $(dt_nodelabel_exists,wisblock_sw1)
 
 config INPUT
 	default y if !MCUBOOT
 
-endif # SHIELD_RAKWIRELESS_RAK19011_SW1
+endif # $(dt_nodelabel_exists,wisblock_sw1)
+
+endif # SHIELD_RAKWIRELESS_RAK19011

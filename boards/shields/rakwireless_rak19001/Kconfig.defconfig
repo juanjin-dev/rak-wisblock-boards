@@ -65,11 +65,11 @@ config UART_CONSOLE
 
 endif # !WISBLOCK_HAS_CDC_ACM_CONSOLE
 
-endif # SHIELD_RAKWIRELESS_RAK19001
-
-if SHIELD_RAKWIRELESS_RAK19001_SW1
+if $(dt_nodelabel_exists,wisblock_sw1)
 
 config INPUT
 	default y if !MCUBOOT
 
-endif # SHIELD_RAKWIRELESS_RAK19001_SW1
+endif # $(dt_nodelabel_exists,wisblock_sw1)
+
+endif # SHIELD_RAKWIRELESS_RAK19001

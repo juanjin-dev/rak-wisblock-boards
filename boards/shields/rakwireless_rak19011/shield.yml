@@ -7,11 +7,4 @@ shields:
     vendor: rakwireless
     supported_features:
       - gpio
-      - fuel_gauge
-  - name: rakwireless_rak19011_sw1
-    full_name: RAKwireless RAK19011 WisBlock Dual IO Base Board with Power Slot (with SW1)
-    vendor: rakwireless
-    supported_features:
-      - gpio
       - input
-      - fuel_gauge
