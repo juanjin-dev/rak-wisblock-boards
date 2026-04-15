@@ -15,16 +15,19 @@
 		gpio-map-pass-thru = <0 0x3f>;
 		gpio-map =
 			<WISBLOCK_IO_SW1	0	&gpio1	1	0>,
+#define WISBLOCK_IO_HAS_SW1
 			<WISBLOCK_IO_TXD0	0	&gpio0	20	0>,
 			<WISBLOCK_IO_RXD0	0	&gpio0	19	0>,
 			<WISBLOCK_IO_LED1	0	&gpio1	3	0>,
 			<WISBLOCK_IO_LED2	0	&gpio1	4	0>,
 			<WISBLOCK_IO_LED3	0	&gpio0	2	0>,
+#define WISBLOCK_IO_HAS_LED3
 			<WISBLOCK_IO_I2C1_SDA	0	&gpio0	13	0>,
 			<WISBLOCK_IO_I2C1_SCL	0	&gpio0	14	0>,
 			<WISBLOCK_IO_AIN0	0	&gpio0	5	0>,
 			<WISBLOCK_IO_AIN1	0	&gpio0	31	0>,
 			<WISBLOCK_IO_IO7	0	&gpio0	28	0>,
+#define WISBLOCK_IO_HAS_IO7
 			<WISBLOCK_IO_SPI_CS	0	&gpio0	26	0>,
 			<WISBLOCK_IO_SPI_CLK	0	&gpio0	3	0>,
 			<WISBLOCK_IO_SPI_MISO	0	&gpio0	29	0>,
@@ -39,20 +42,16 @@
 			<WISBLOCK_IO_I2C2_SCL	0	&gpio0	25	0>,
 			<WISBLOCK_IO_IO5	0	&gpio0	9	0>,
 			<WISBLOCK_IO_IO6	0	&gpio0	10	0>;
-
-		has-sw1;
-		has-led3;
-		has-io7;
 	};
 
-		wisblock_adc: wisblock_adc {
-			compatible = "wisblock-adc";
-			#io-channel-cells = <1>;
-			io-channel-map =
-				<WISBLOCK_ADC_AIN0	&adc	3>,
-				<WISBLOCK_ADC_AIN1	&adc	7>,
-				<WISBLOCK_ADC_IO4	&adc	2>;
-		};
+	wisblock_adc: wisblock_adc {
+		compatible = "wisblock-adc";
+		#io-channel-cells = <1>;
+		io-channel-map =
+			<WISBLOCK_ADC_AIN0	&adc	3>,
+			<WISBLOCK_ADC_AIN1	&adc	7>,
+			<WISBLOCK_ADC_IO4	&adc	2>;
+	};
 
 	wisblock_pwm: wisblock_pwm {
 		compatible = "wisblock-pwm";

@@ -22,9 +22,11 @@
 		*/
 		gpio-map =
 			<WISBLOCK_IO_SW1	0	&gpio1	3	0>, /* GPIO35 */
+#define WISBLOCK_IO_HAS_SW1
 			<WISBLOCK_IO_LED1	0	&gpio1	14	0>, /* GPIO44 */
 			<WISBLOCK_IO_LED2	0	&gpio1	13	0>, /* GPIO43 */
 			<WISBLOCK_IO_LED3	0	&gpio1	1	0>, /* GPIO33 */
+#define WISBLOCK_IO_HAS_LED3
 			<WISBLOCK_IO_I2C1_SDA	0	&gpio0	9	0>, /* GPIO9 */
 			<WISBLOCK_IO_I2C1_SCL	0	&gpio1	8	0>, /* GPIO40 */
 			<WISBLOCK_IO_AIN0	0	&gpio0	1	0>, /* GPIO1 */
@@ -43,9 +45,6 @@
 			<WISBLOCK_IO_I2C2_SCL	0	&gpio0	18	0>, /* GPIO18 */
 			<WISBLOCK_IO_IO5	0	&gpio1	6	0>, /* GPIO38 */
 			<WISBLOCK_IO_IO6	0	&gpio1	7	0>; /* GPIO39 */
-
-		has-sw1;
-		has-led3;
 	};
 
 	wisblock_adc: wisblock_adc {
