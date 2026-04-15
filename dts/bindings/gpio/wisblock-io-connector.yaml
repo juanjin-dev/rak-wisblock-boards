@@ -17,12 +17,12 @@ description: |
     2   RXD0      UART0 RX
     3   LED1      User LED 1
     4   LED2      User LED 2
-    5   LED3      User LED 3 (optional, see has-led3)
+    5   LED3      User LED 3
     6   I2C1_SDA  I2C bus 1 SDA
     7   I2C1_SCL  I2C bus 1 SCL
     8   AIN0      Analog input 0
     9   AIN1      Analog input 1
-    10  IO7       General-purpose IO7 (optional, see has-io7)
+    10  IO7       General-purpose IO7
     11  SPI_CS    SPI chip select
     12  SPI_CLK   SPI clock
     13  SPI_MISO  SPI MISO
@@ -38,35 +38,6 @@ description: |
     23  IO5       General-purpose IO5
     24  IO6       General-purpose IO6
 
-  Not all WisBlock Core modules wire every pin. The has-sw1, has-led3,
-  and has-io7 properties indicate which optional signals are present.
-
 compatible: "wisblock-io-connector"
 
 include: [gpio-nexus.yaml, base.yaml]
-
-properties:
-  has-sw1:
-    type: boolean
-    description: |
-      Present if the board physically wires SW1 (pin 0) of the WisBlock IO
-      connector to the MCU. Not all WisBlock Core modules expose this signal.
-      Shields that provide a user button through &wisblock_io should check
-      for this property to determine whether a no-SW1 overlay variant is
-      needed.
-
-  has-led3:
-    type: boolean
-    description: |
-      Present if the board physically wires LED3 (pin 5) of the WisBlock IO
-      connector to the MCU. Not all WisBlock Core modules expose this signal.
-      Shields that drive a third user LED through &wisblock_io should check
-      for this property.
-
-  has-io7:
-    type: boolean
-    description: |
-      Present if the board physically wires IO7 (pin 10) of the WisBlock IO
-      connector to the MCU. On some Core modules this pin is used as BOOT0 or
-      left unconnected. Shields that use IO7 as a general-purpose IO through
-      &wisblock_io should check for this property.
