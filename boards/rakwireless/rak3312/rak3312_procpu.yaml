@@ -20,5 +20,6 @@ supported:
   - spi
   - uart
   - watchdog
-  - display
+  - wisblock
+  - wisblock_i2c2
 vendor: rakwireless

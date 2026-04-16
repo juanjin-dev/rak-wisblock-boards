@@ -1,4 +1,4 @@
-identifier: rak19026
+identifier: rak19026/nrf52840
 name: RAK19026 Meshtastic WisMesh Base Board
 type: mcu
 arch: arm
@@ -8,6 +8,10 @@ toolchain:
   - zephyr
   - gnuarmemb
 supported:
+  - wisblock
+  - wisblock_uart0
+  - wisblock_i2c2
+  - wisblock_dmic
   - adc
   - ble
   - counter

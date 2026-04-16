@@ -18,4 +18,8 @@ supported:
   - usb_device
   - watchdog
   - lora
+  - wisblock
+  - wisblock_uart0
+  - wisblock_i2c2
+  - wisblock_dmic
 vendor: rakwireless

@@ -1,4 +1,4 @@
-identifier: rak3372/stm32wle5ccux
+identifier: rak3372/stm32wle5xx
 name: RAK3372 WisBlock LPWAN Module
 type: mcu
 arch: arm
@@ -8,6 +8,8 @@ toolchain:
 ram: 64
 flash: 256
 supported:
+  - wisblock
+  - wisblock_uart0
   - adc
   - counter
   - dac

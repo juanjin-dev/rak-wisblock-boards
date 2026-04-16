@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
 
-identifier: rak11310
+identifier: rak11310/rp2040
 name: RAK11310 WisBlock LoRaWAN Module
 type: mcu
 arch: arm
@@ -15,6 +15,9 @@ supported:
   - pico_i2c
   - pico_spi
   - pico_serial
+  - wisblock
+  - wisblock_uart0
+  - wisblock_i2c2
   - uart
   - gpio
   - adc
@@ -29,3 +32,4 @@ supported:
   - clock
   - usbd
   - lora
+vendor: rakwireless
