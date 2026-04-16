@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+#
+# WisBlock IO interface contract validation.
+# Verifies that each WisBlock Core module compiles correctly when combined with
+# each WisBlock Base board shield.  The WisBlock IO connector is a vendor-neutral
+# interface; any WisBlock Certified Core or Base board must satisfy this contract.
+
+common:
+  build_only: true
+  tags:
+    - wisblock
+
+tests:
+  boards.wisblock.io_contract:
+    depends_on: wisblock
+
+  boards.wisblock.io_contract.uart0:
+    depends_on: wisblock_uart0
+    extra_configs:
+      - CONFIG_WISBLOCK_IO_TEST_UART0=y
+
+  boards.wisblock.io_contract.i2c2:
+    depends_on: wisblock_i2c2
+    extra_configs:
+      - CONFIG_WISBLOCK_IO_TEST_I2C2=y
+
+  boards.wisblock.io_contract.dmic:
+    depends_on: wisblock_dmic
+    extra_configs:
+      - CONFIG_WISBLOCK_IO_TEST_DMIC=y
