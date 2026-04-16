@@ -42,10 +42,6 @@
 			<WISBLOCK_IO_I2C2_SCL	0	&gpio0	25	0>,
 			<WISBLOCK_IO_IO5	0	&gpio0	9	0>,
 			<WISBLOCK_IO_IO6	0	&gpio0	10	0>;
-
-		has-sw1;
-		has-led3;
-		has-io7;
 	};
 
 	wisblock_adc: wisblock_adc {
@@ -82,7 +78,9 @@ wisblock_i2c2: &i2c1 {};
 wisblock_spi: &spi2 {};
 wisblock_dmic: &pdm0 {};
 wisblock_sw1: &gpio_sw1 {};
-wisblock_vbat: board_vbat {};
+wisblock_vbat: &board_vbat {};
+wisblock_led1: &board_pwm_led {};
+wisblock_led2: &board_gpio_led {};
 
 #include <wisblock/wisblock_slotc.dtsi>
 #include <wisblock/wisblock_slotd.dtsi>

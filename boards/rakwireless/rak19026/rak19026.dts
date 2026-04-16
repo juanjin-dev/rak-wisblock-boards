@@ -5,6 +5,7 @@
 
 /dts-v1/;
 #include <rakwireless/rak4630.dtsi>
+#include <zephyr/dt-bindings/battery/battery.h>
 #include "rak19026-pinctrl.dtsi"
 
 / {
@@ -21,8 +22,8 @@
 	};
 
 	aliases {
-		led0 = &gpio_led1;
-		led1 = &gpio_led2;
+		pwm-led0 = &board_pwm_led;
+		led0 = &board_gpio_led;
 		sw0 = &gpio_sw1;
 		accel = &lis3dh;
 		gnss = &u_blox_m8;
@@ -35,6 +36,22 @@
 			gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;
 			label = "SW1";
 			zephyr,code = <INPUT_KEY_0>;
+		};
+	};
+
+	board_pwm_leds {
+		compatible = "pwm-leds";
+
+		board_pwm_led: board_pwm_led {
+			pwms = <&pwm0 0 PWM_MSEC(5) PWM_POLARITY_NORMAL>;
+		};
+	};
+
+	board_gpio_leds {
+		compatible = "gpio-leds";
+
+		board_gpio_led: board_gpio_led {
+			gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;
 		};
 	};
 
