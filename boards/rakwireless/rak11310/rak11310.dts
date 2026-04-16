@@ -53,7 +53,7 @@
 &i2c1 {
 	pinctrl-0 = <&i2c1_default>;
 	pinctrl-names = "default";
-	status = "disabled";
+	status = "okay";
 	clock-frequency = <I2C_BITRATE_FAST>;
 };
 
