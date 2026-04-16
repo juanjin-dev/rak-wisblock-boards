@@ -12,6 +12,7 @@ toolchain:
   - gnuarmemb
 supported:
   - wisblock
+  - wisblock_core
   - wisblock_uart0
   - adc
   - counter

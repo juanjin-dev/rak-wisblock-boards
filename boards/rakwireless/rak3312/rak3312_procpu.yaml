@@ -21,5 +21,6 @@ supported:
   - uart
   - watchdog
   - wisblock
+  - wisblock_core
   - wisblock_i2c2
 vendor: rakwireless

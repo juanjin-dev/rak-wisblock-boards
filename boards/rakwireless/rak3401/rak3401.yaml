@@ -19,6 +19,7 @@ supported:
   - watchdog
   - lora
   - wisblock
+  - wisblock_core
   - wisblock_uart0
   - wisblock_i2c2
   - wisblock_dmic

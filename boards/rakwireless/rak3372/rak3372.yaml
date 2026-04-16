@@ -9,6 +9,7 @@ ram: 64
 flash: 256
 supported:
   - wisblock
+  - wisblock_core
   - wisblock_uart0
   - adc
   - counter

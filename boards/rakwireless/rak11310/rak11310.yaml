@@ -16,6 +16,7 @@ supported:
   - pico_spi
   - pico_serial
   - wisblock
+  - wisblock_core
   - wisblock_uart0
   - wisblock_i2c2
   - uart
