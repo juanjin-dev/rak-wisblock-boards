@@ -1,0 +1,55 @@
+/*
+ * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/dt-bindings/gpio/wisblock-io-connector.h>
+
+/*
+ * WisBlock IO contract verification via /zephyr,user nexus assertions.
+ *
+ * Each *-gpios entry forces edtlib to look up the given logical pin index in
+ * wisblock_io's gpio-map at CMake configure time.  If any mandatory pin is
+ * absent from the Core's gpio-map implementation, the build fails with:
+ *
+ *   devicetree error: child specifier (...) does not appear in <gpio-map>
+ *
+ * Optional pins SW1, LED3, IO7 are guarded by their WISBLOCK_IO_HAS_*
+ * preprocessor macros and therefore excluded here.
+ *
+ * /zephyr,user is special: edtlib infers property types for it automatically
+ * (infer_binding_for_paths), so no custom binding file is required and no
+ * driver code is emitted.
+ */
+/ {
+	zephyr,user {
+		#if defined(WISBLOCK_IO_HAS_SW1)
+		sw1-gpios	= <&wisblock_io WISBLOCK_IO_SW1 0>;
+#endif /* WISBLOCK_IO_HAS_SW1 */
+		led1-gpios	= <&wisblock_io WISBLOCK_IO_LED1	0>;
+		led2-gpios	= <&wisblock_io WISBLOCK_IO_LED2	0>;
+#if defined(WISBLOCK_IO_HAS_LED3)
+		led3-gpios	= <&wisblock_io WISBLOCK_IO_LED3	0>;
+#endif /* WISBLOCK_IO_HAS_LED3 */
+		i2c1-sda-gpios	= <&wisblock_io WISBLOCK_IO_I2C1_SDA	0>;
+		i2c1-scl-gpios	= <&wisblock_io WISBLOCK_IO_I2C1_SCL	0>;
+		ain0-gpios	= <&wisblock_io WISBLOCK_IO_AIN0	0>;
+		ain1-gpios	= <&wisblock_io WISBLOCK_IO_AIN1	0>;
+#if defined(WISBLOCK_IO_HAS_IO7)
+		io7-gpios	= <&wisblock_io WISBLOCK_IO_IO7		0>;
+#endif /* WISBLOCK_IO_HAS_IO7 */
+		spi-cs-gpios	= <&wisblock_io WISBLOCK_IO_SPI_CS	0>;
+		spi-clk-gpios	= <&wisblock_io WISBLOCK_IO_SPI_CLK	0>;
+		spi-miso-gpios	= <&wisblock_io WISBLOCK_IO_SPI_MISO	0>;
+		spi-mosi-gpios	= <&wisblock_io WISBLOCK_IO_SPI_MOSI	0>;
+		io1-gpios	= <&wisblock_io WISBLOCK_IO_IO1		0>;
+		io2-gpios	= <&wisblock_io WISBLOCK_IO_IO2		0>;
+		io3-gpios	= <&wisblock_io WISBLOCK_IO_IO3		0>;
+		io4-gpios	= <&wisblock_io WISBLOCK_IO_IO4		0>;
+		txd1-gpios	= <&wisblock_io WISBLOCK_IO_TXD1	0>;
+		rxd1-gpios	= <&wisblock_io WISBLOCK_IO_RXD1	0>;
+		io5-gpios	= <&wisblock_io WISBLOCK_IO_IO5		0>;
+		io6-gpios	= <&wisblock_io WISBLOCK_IO_IO6		0>;
+	};
+};
+
