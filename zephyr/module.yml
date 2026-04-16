@@ -8,3 +8,5 @@ build:
     dts_root: .
     board_root: .
     snippet_root: .
+tests:
+  - tests
