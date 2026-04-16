@@ -19,7 +19,7 @@
 		 * 	GPIO33, GPIO34, GPIO35, GPIO36, GPIO37 is
 		 * 	not available in extended memory mode, so they are not
 		 * 	included in the gpio-map.
-		*/
+		 */
 		gpio-map =
 			<WISBLOCK_IO_SW1	0	&gpio1	3	0>, /* GPIO35 */
 #define WISBLOCK_IO_HAS_SW1

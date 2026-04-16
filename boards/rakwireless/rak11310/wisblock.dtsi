@@ -38,14 +38,14 @@
 			<WISBLOCK_IO_IO6	0	&gpio0	8	0>;
 	};
 
-		wisblock_adc: wisblock_adc {
-			compatible = "wisblock-adc";
-			#io-channel-cells = <1>;
-			io-channel-map =
-				<WISBLOCK_ADC_AIN0	&adc	0>,
-				<WISBLOCK_ADC_AIN1	&adc	1>,
-				<WISBLOCK_ADC_IO4	&adc	2>;
-		};
+	wisblock_adc: wisblock_adc {
+		compatible = "wisblock-adc";
+		#io-channel-cells = <1>;
+		io-channel-map =
+			<WISBLOCK_ADC_AIN0	&adc	0>,
+			<WISBLOCK_ADC_AIN1	&adc	1>,
+			<WISBLOCK_ADC_IO4	&adc	2>;
+	};
 
 	wisblock_pwm: wisblock_pwm {
 		compatible = "wisblock-pwm";
