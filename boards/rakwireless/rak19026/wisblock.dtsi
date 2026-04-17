@@ -76,7 +76,7 @@ wisblock_uart1: &uart1 {};
 wisblock_i2c1: &i2c0 {};
 wisblock_i2c2: &i2c1 {};
 wisblock_spi: &spi2 {};
-wisblock_dmic: &pdm0 {};
+wisblock_pdm: &pdm0 {};
 wisblock_sw1: &gpio_sw1 {};
 wisblock_vbat: &board_vbat {};
 wisblock_led1: &board_pwm_led {};

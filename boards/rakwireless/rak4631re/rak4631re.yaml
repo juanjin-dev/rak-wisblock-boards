@@ -22,5 +22,5 @@ supported:
   - wisblock_core
   - wisblock_uart0
   - wisblock_i2c2
-  - wisblock_dmic
+  - wisblock_pdm
 vendor: rakwireless
