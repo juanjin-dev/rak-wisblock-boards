@@ -36,14 +36,12 @@
 	current-speed = <115200>;
 	pinctrl-0 = <&uart0_default>;
 	pinctrl-names = "default";
-	status = "okay";
 };
 
 &uart1 {
 	current-speed = <115200>;
 	pinctrl-0 = <&uart1_default>;
 	pinctrl-names = "default";
-	status = "okay";
 };
 
 &adc0 {

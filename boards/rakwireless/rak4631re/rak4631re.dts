@@ -30,7 +30,6 @@
 };
 
 &uart0 {
-	status = "okay";
 	pinctrl-0 = <&uart0_default>;
 	pinctrl-1 = <&uart0_sleep>;
 	pinctrl-names = "default", "sleep";
@@ -38,7 +37,6 @@
 };
 
 &uart1 {
-	status = "okay";
 	pinctrl-0 = <&uart1_default>;
 	pinctrl-1 = <&uart1_sleep>;
 	pinctrl-names = "default", "sleep";
@@ -46,7 +44,6 @@
 };
 
 &i2c0 {
-	status = "okay";
 	compatible = "nordic,nrf-twi";
 	pinctrl-0 = <&i2c0_default>;
 	pinctrl-1 = <&i2c0_sleep>;
@@ -54,14 +51,12 @@
 };
 
 &i2c1 {
-	status = "okay";
 	pinctrl-0 = <&i2c1_default>;
 	pinctrl-1 = <&i2c1_sleep>;
 	pinctrl-names = "default", "sleep";
 };
 
 &spi2 {
-	status = "okay";
 	pinctrl-0 = <&spi2_default>;
 	pinctrl-1 = <&spi2_sleep>;
 	pinctrl-names = "default", "sleep";
@@ -125,7 +120,7 @@ zephyr_udc0: &usbd {
 	status = "okay";
 
 	cdc_acm_uart0: cdc_acm_uart0 {
-		status = "okay";
+		status = "disabled";
 		compatible = "zephyr,cdc-acm-uart";
 	};
 };
