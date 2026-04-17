@@ -63,6 +63,10 @@
 	};
 };
 
+&wisblock_console {
+	status = "okay";
+};
+
 #ifdef WISBLOCK_IO_HAS_SW1
 #include "rakwireless_rak19001_sw1.dtsi"
 #endif /* WISBLOCK_IO_HAS_SW1 */

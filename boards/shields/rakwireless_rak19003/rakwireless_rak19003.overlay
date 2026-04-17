@@ -57,3 +57,7 @@
 			<BATTERY_OCV_CURVE_LITHIUM_ION_POLYMER_DEFAULT>;
 	};
 };
+
+&wisblock_console {
+	status = "okay";
+};
