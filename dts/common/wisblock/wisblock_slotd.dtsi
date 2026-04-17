@@ -24,3 +24,5 @@
 			<WISBLOCK_SLOT_RXD      0 &wisblock_io WISBLOCK_IO_RXD1     0>;
 	};
 };
+
+wisblock_slotd_uart: &wisblock_uart1 {};
