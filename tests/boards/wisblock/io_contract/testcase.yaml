@@ -25,7 +25,7 @@ tests:
     extra_configs:
       - CONFIG_WISBLOCK_IO_TEST_I2C2=y
 
-  boards.wisblock.io_contract.dmic:
-    depends_on: wisblock_dmic
+  boards.wisblock.io_contract.pdm:
+    depends_on: wisblock_pdm
     extra_configs:
-      - CONFIG_WISBLOCK_IO_TEST_DMIC=y
+      - CONFIG_WISBLOCK_IO_TEST_PDM=y

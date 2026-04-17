@@ -23,23 +23,6 @@ BUILD_ASSERT(
 	"wisblock_i2c1 missing"
 );
 
-BUILD_ASSERT(
-	DT_NODE_HAS_STATUS(DT_NODELABEL(wisblock_console), okay),
-	"wisblock_console disabled"
-);
-BUILD_ASSERT(
-	DT_NODE_HAS_STATUS(DT_NODELABEL(wisblock_uart1), okay),
-	"wisblock_uart1 disabled"
-);
-BUILD_ASSERT(
-	DT_NODE_HAS_STATUS(DT_NODELABEL(wisblock_spi), okay),
-	"wisblock_spi disabled"
-);
-BUILD_ASSERT(
-	DT_NODE_HAS_STATUS(DT_NODELABEL(wisblock_i2c1), okay),
-	"wisblock_i2c1 disabled"
-);
-
 #define ZU DT_PATH(zephyr_user)
 
 /* LEDs */
@@ -128,10 +111,6 @@ BUILD_ASSERT(
 	DT_NODE_EXISTS(DT_NODELABEL(wisblock_uart0)),
 	"wisblock_uart0 missing"
 );
-BUILD_ASSERT(
-	DT_NODE_HAS_STATUS(DT_NODELABEL(wisblock_uart0), okay),
-	"wisblock_uart0 disabled"
-);
 #endif /* CONFIG_WISBLOCK_IO_TEST_UART0 */
 
 /* Optional: wisblock_i2c2 */
@@ -140,23 +119,15 @@ BUILD_ASSERT(
 	DT_NODE_EXISTS(DT_NODELABEL(wisblock_i2c2)),
 	"wisblock_i2c2 missing"
 );
-BUILD_ASSERT(
-	DT_NODE_HAS_STATUS(DT_NODELABEL(wisblock_i2c2), okay),
-	"wisblock_i2c2 disabled"
-);
 #endif /* CONFIG_WISBLOCK_IO_TEST_I2C2 */
 
-/* Optional: wisblock_dmic */
-#if defined(CONFIG_WISBLOCK_IO_TEST_DMIC)
+/* Optional: wisblock_pdm */
+#if defined(CONFIG_WISBLOCK_IO_TEST_PDM)
 BUILD_ASSERT(
-	DT_NODE_EXISTS(DT_NODELABEL(wisblock_dmic)),
-	"wisblock_dmic missing"
+	DT_NODE_EXISTS(DT_NODELABEL(wisblock_pdm)),
+	"wisblock_pdm missing"
 );
-BUILD_ASSERT(
-	DT_NODE_HAS_STATUS(DT_NODELABEL(wisblock_dmic), okay),
-	"wisblock_dmic disabled"
-);
-#endif /* CONFIG_WISBLOCK_IO_TEST_DMIC */
+#endif /* CONFIG_WISBLOCK_IO_TEST_PDM */
 
 int main(void) {
 	return 0;

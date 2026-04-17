@@ -23,7 +23,7 @@
  */
 / {
 	zephyr,user {
-		#if defined(WISBLOCK_IO_HAS_SW1)
+#if defined(WISBLOCK_IO_HAS_SW1)
 		sw1-gpios	= <&wisblock_io WISBLOCK_IO_SW1 0>;
 #endif /* WISBLOCK_IO_HAS_SW1 */
 		led1-gpios	= <&wisblock_io WISBLOCK_IO_LED1	0>;
@@ -52,4 +52,3 @@
 		io6-gpios	= <&wisblock_io WISBLOCK_IO_IO6		0>;
 	};
 };
-

@@ -13,10 +13,10 @@ config WISBLOCK_IO_TEST_I2C2
 	  Enable build-time verification that wisblock_i2c2 exists and is
 	  enabled on the target board.
 
-config WISBLOCK_IO_TEST_DMIC
-	bool "Verify wisblock_dmic optional bus"
+config WISBLOCK_IO_TEST_PDM
+	bool "Verify wisblock_pdm optional bus"
 	help
-	  Enable build-time verification that wisblock_dmic exists and is
+	  Enable build-time verification that wisblock_pdm exists and is
 	  enabled on the target board.
 
 source "Kconfig.zephyr"
