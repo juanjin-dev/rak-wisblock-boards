@@ -12,3 +12,7 @@
 		zephyr,bt-c2h-uart = &wisblock_uart1;
 	};
 };
+
+&wisblock_uart1 {
+	status = "okay";
+};
