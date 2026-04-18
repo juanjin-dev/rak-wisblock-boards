@@ -125,3 +125,11 @@ zephyr_udc0: &usbd {
 };
 
 #include "wisblock.dtsi"
+
+/* 
+ * P0.09/P0.10 are NFC antenna pins by default
+ * reconfigure as GPIO for WisBlock IO5/IO6
+ */
+&uicr {
+	nfct-pins-as-gpios;
+};
