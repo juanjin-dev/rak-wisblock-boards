@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 RAKwireless Technology Limited
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -23,8 +23,9 @@
 #define WISBLOCK_PWM_IO1	1 /**< PWM channel for IO1 */
 #define WISBLOCK_PWM_IO2	2 /**< PWM channel for IO2 */
 #define WISBLOCK_PWM_IO3	3 /**< PWM channel for IO3 */
-#define WISBLOCK_PWM_IO5	4 /**< PWM channel for IO5 */
-#define WISBLOCK_PWM_IO6	5 /**< PWM channel for IO6 */
+#define WISBLOCK_PWM_IO4	4 /**< PWM channel for IO4 */
+#define WISBLOCK_PWM_IO5	5 /**< PWM channel for IO5 */
+#define WISBLOCK_PWM_IO6	6 /**< PWM channel for IO6 */
 
 /** @} */
 

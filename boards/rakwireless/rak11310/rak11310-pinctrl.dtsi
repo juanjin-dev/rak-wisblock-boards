@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 RAKwireless Technology Limited
  */
 
 &pinctrl {
@@ -70,8 +70,7 @@
 		group1 {
 			pinmux =
 				<ADC_CH0_P26>,
-				<ADC_CH1_P27>,
-				<ADC_CH2_P28>; /* IO4 */
+				<ADC_CH1_P27>;
 			input-enable;
 		};
 	};

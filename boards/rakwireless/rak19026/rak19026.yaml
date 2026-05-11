@@ -25,4 +25,5 @@ supported:
   - lora
   - display
   - sensor
+  - netif:openthread
 vendor: rakwireless

@@ -11,8 +11,6 @@ the RAK4631 an ultra-low power communication solution.
 
 - `WisBlock overview <https://www.rakwireless.com/en-us/products/wisblock>`_
 - `RAK4631 datasheet <https://docs.rakwireless.com/product-categories/wisblock/rak4631/datasheet>`_
-- `WisBlock for Zephyr out-of-tree module <https://github.com/RAKwireless/wisblock-for-zephyr>`_
-- `WisBlock for Zephyr documentation <https://docs.rakwireless.com/product-categories/software-apis-and-libraries/wisblock-for-zephyr>`_
 
 Hardware
 ********
@@ -90,6 +88,15 @@ the WisBlock ecosystem, allowing for easy integration with various WisBlock modu
 .. figure:: img/mounting.webp
    :align: center
    :alt: RAK4631 mounting
+
+Supported WisBlock Base boards as Zephyr shields include
+
+- :ref:`rakwireless_rak19001`
+- :ref:`rakwireless_rak19003`
+- :ref:`rakwireless_rak19007`
+- :ref:`rakwireless_rak19009`
+- :ref:`rakwireless_rak19010`
+- :ref:`rakwireless_rak19011`
 
 Programming and debugging
 *************************
