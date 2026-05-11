@@ -29,6 +29,16 @@
 		led0 = &wisblock_led2;
 		pwm-led0 = &wisblock_led1;
 		fuel-gauge0 = &wisblock_vbat;
+		sw0 = &wisblock_sw1;
+	};
+
+	rak19001_keys {
+		compatible = "gpio-keys";
+
+		wisblock_sw1: rak19001_sw1 {
+			gpios = <&wisblock_io WISBLOCK_IO_SW1 GPIO_ACTIVE_LOW>;
+			zephyr,code = <INPUT_KEY_0>;
+		};
 	};
 
 	rak19001_pwm_leds {
