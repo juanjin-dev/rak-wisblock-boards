@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 RAKwireless Technology Limited
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -21,7 +21,12 @@
 
 #define WISBLOCK_ADC_AIN0	0 /**< Analog input 0 (AIN0) */
 #define WISBLOCK_ADC_AIN1	1 /**< Analog input 1 (AIN1) */
-#define WISBLOCK_ADC_IO4	2 /**< Analog input on IO4 */
+#define WISBLOCK_ADC_IO1	2 /**< Analog input on IO1 */
+#define WISBLOCK_ADC_IO2	3 /**< Analog input on IO2 */
+#define WISBLOCK_ADC_IO3	4 /**< Analog input on IO3 */
+#define WISBLOCK_ADC_IO4	5 /**< Analog input on IO4 */
+#define WISBLOCK_ADC_IO5	6 /**< Analog input on IO5 */
+#define WISBLOCK_ADC_IO6	7 /**< Analog input on IO6 */
 
 /** @} */
 
