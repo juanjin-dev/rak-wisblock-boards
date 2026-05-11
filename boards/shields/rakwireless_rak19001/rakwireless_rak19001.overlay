@@ -1,14 +1,14 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 RAKwireless Technology Limited
  */
 
-#include <wisblock/wisblock_slota.dtsi>
-#include <wisblock/wisblock_slotb.dtsi>
-#include <wisblock/wisblock_slotc.dtsi>
-#include <wisblock/wisblock_slotd.dtsi>
-#include <wisblock/wisblock_slote.dtsi>
-#include <wisblock/wisblock_slotf.dtsi>
+#include <wisblock/wisblock_sensor_a.dtsi>
+#include <wisblock/wisblock_sensor_b.dtsi>
+#include <wisblock/wisblock_sensor_c.dtsi>
+#include <wisblock/wisblock_sensor_d.dtsi>
+#include <wisblock/wisblock_sensor_e.dtsi>
+#include <wisblock/wisblock_sensor_f.dtsi>
 
 #include <zephyr/dt-bindings/gpio/gpio.h>
 #include <zephyr/dt-bindings/pwm/pwm.h>
