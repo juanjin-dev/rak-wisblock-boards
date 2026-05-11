@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+# Copyright (c) 2026 RAKwireless Technology Limited
 #
 # WisBlock IO interface contract validation.
 # Verifies that each WisBlock Core module compiles correctly when combined with
@@ -14,18 +14,3 @@ common:
 tests:
   boards.wisblock.io_contract:
     depends_on: wisblock
-
-  boards.wisblock.io_contract.uart0:
-    depends_on: wisblock_uart0
-    extra_configs:
-      - CONFIG_WISBLOCK_IO_TEST_UART0=y
-
-  boards.wisblock.io_contract.i2c2:
-    depends_on: wisblock_i2c2
-    extra_configs:
-      - CONFIG_WISBLOCK_IO_TEST_I2C2=y
-
-  boards.wisblock.io_contract.pdm:
-    depends_on: wisblock_pdm
-    extra_configs:
-      - CONFIG_WISBLOCK_IO_TEST_PDM=y

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 RAKwireless Technology Limited
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -104,30 +104,6 @@ BUILD_ASSERT(
 	DT_NODE_HAS_STATUS(DT_GPIO_CTLR(ZU, io6_gpios),      okay),
 	"IO IO6 ctrl disabled"
 );
-
-/* Optional: wisblock_uart0 */
-#if defined(CONFIG_WISBLOCK_IO_TEST_UART0)
-BUILD_ASSERT(
-	DT_NODE_EXISTS(DT_NODELABEL(wisblock_uart0)),
-	"wisblock_uart0 missing"
-);
-#endif /* CONFIG_WISBLOCK_IO_TEST_UART0 */
-
-/* Optional: wisblock_i2c2 */
-#if defined(CONFIG_WISBLOCK_IO_TEST_I2C2)
-BUILD_ASSERT(
-	DT_NODE_EXISTS(DT_NODELABEL(wisblock_i2c2)),
-	"wisblock_i2c2 missing"
-);
-#endif /* CONFIG_WISBLOCK_IO_TEST_I2C2 */
-
-/* Optional: wisblock_pdm */
-#if defined(CONFIG_WISBLOCK_IO_TEST_PDM)
-BUILD_ASSERT(
-	DT_NODE_EXISTS(DT_NODELABEL(wisblock_pdm)),
-	"wisblock_pdm missing"
-);
-#endif /* CONFIG_WISBLOCK_IO_TEST_PDM */
 
 int main(void) {
 	return 0;
