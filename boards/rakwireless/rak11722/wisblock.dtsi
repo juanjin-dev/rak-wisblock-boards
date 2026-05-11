@@ -8,22 +8,36 @@
 #include <zephyr/dt-bindings/pwm/wisblock-pwm.h>
 
 / {
+	null_gpios {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		null_gpio: gpio@0 {
+			compatible = "vnd,gpio";
+			status = "disabled";
+			reg = <0>;
+			#gpio-cells = <2>;
+			ngpios = <2>;
+		};
+	};
+
 	wisblock_io: wisblock_io {
 		compatible = "wisblock-io-connector";
 		#gpio-cells = <2>;
-		gpio-map-mask = <0xffffffff 0xffffffc0>;
-		gpio-map-pass-thru = <0 0x3f>;
+		gpio-map-mask = <0xffffffff 0x0>;
+		gpio-map-pass-thru = <0 GPIO_DT_FLAGS_MASK>;
 		gpio-map =
+			<WISBLOCK_IO_SW1	0	&null_gpio	0	0>, /* Not connected */
 			<WISBLOCK_IO_TXD0	0	&gpio32_63	7	0>,
 			<WISBLOCK_IO_RXD0	0	&gpio32_63	8	0>,
 			<WISBLOCK_IO_LED1	0	&gpio32_63	12	0>,
 			<WISBLOCK_IO_LED2	0	&gpio32_63	13	0>,
+			<WISBLOCK_IO_LED3	0	&null_gpio	0	0>, /* Not connected */
 			<WISBLOCK_IO_I2C1_SDA	0	&gpio0_31	25	0>,
 			<WISBLOCK_IO_I2C1_SCL	0	&gpio0_31	27	0>,
 			<WISBLOCK_IO_AIN0	0	&gpio0_31	13	0>,
 			<WISBLOCK_IO_AIN1	0	&gpio32_63	1	0>,
 			<WISBLOCK_IO_IO7	0	&gpio32_63	0	0>,
-#define WISBLOCK_IO_HAS_IO7
 			<WISBLOCK_IO_SPI_CS	0	&gpio0_31	1	0>,
 			<WISBLOCK_IO_SPI_CLK	0	&gpio0_31	5	0>,
 			<WISBLOCK_IO_SPI_MISO	0	&gpio0_31	6	0>,
@@ -43,8 +57,7 @@
 		#io-channel-cells = <1>;
 		io-channel-map =
 			<WISBLOCK_ADC_AIN0	&adc0	8>,
-			<WISBLOCK_ADC_AIN1	&adc0	5>,
-			<WISBLOCK_ADC_IO4	&adc0	3>;
+			<WISBLOCK_ADC_AIN1	&adc0	5>;
 	};
 
 	wisblock_pwm: wisblock_pwm {
@@ -54,9 +67,7 @@
 		pwm-map-pass-thru = <0x0 0xffffffff 0xffffffff>;
 
 		pwm-map =
-			<WISBLOCK_PWM_LED1	0	0	&pwm5	0	0	0>,
-			<WISBLOCK_PWM_IO3	0	0	&pwm7	0	0	0>,
-			<WISBLOCK_PWM_IO5	0	0	&pwm0	0	0	0>;
+			<WISBLOCK_PWM_LED1	0	0	&pwm5	0	0	0>;
 	};
 };
 
