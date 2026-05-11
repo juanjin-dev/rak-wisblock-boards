@@ -1,21 +1,21 @@
 /*
- * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 RAKwireless Technology Limited
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 /**
  * @file
- * @brief WisBlock IO connector pin constants
- * @ingroup wisblock-io-connector
+ * @brief WisBlock IO slot connector pin constants
+ * @ingroup wisblock-io-slot
  */
 
-#ifndef ZEPHYR_INCLUDE_DT_BINDINGS_GPIO_WISBLOCK_IO_CONNECTOR_H_
-#define ZEPHYR_INCLUDE_DT_BINDINGS_GPIO_WISBLOCK_IO_CONNECTOR_H_
+#ifndef ZEPHYR_INCLUDE_DT_BINDINGS_GPIO_WISBLOCK_IO_SLOT_H_
+#define ZEPHYR_INCLUDE_DT_BINDINGS_GPIO_WISBLOCK_IO_SLOT_H_
 
 /**
- * @defgroup wisblock-io-connector WisBlock IO Connector
- * @brief Constants for pins exposed on WisBlock IO Connector
+ * @defgroup wisblock-io-slot WisBlock IO slot connector
+ * @brief Constants for pins exposed on WisBlock IO slot connector
  * @ingroup devicetree-gpio-pin-headers
  * @{
  */
@@ -48,4 +48,4 @@
 
 /** @} */
 
-#endif /* ZEPHYR_INCLUDE_DT_BINDINGS_GPIO_WISBLOCK_IO_CONNECTOR_H_ */
+#endif /* ZEPHYR_INCLUDE_DT_BINDINGS_GPIO_WISBLOCK_IO_SLOT_H_ */

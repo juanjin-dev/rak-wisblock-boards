@@ -1,16 +1,15 @@
-# Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+# Copyright (c) 2026 RAKwireless Technology Limited
 # SPDX-License-Identifier: Apache-2.0
 
 description: |
-  GPIO pins exposed on the WisBlock IO connector.
+  GPIO pins exposed on a WisBlock I/O Slot interface.
 
-  The WisBlock IO connector is a 40-pin board-to-board connector that
-  carries power, UART, SPI, I2C, analog inputs, and general-purpose
-  GPIO signals between a WisBlock Core module and a WisBlock Base board.
+  An I/O Slot uses a WC40 40-pin connector (WC40F on the Base Board side)
+  and accepts an I/O Module. All I/O Slots share a single pin assignment.
 
-  This binding provides a nexus mapping for 25 logical pins where parent
-  pin indices correspond to the WISBLOCK_IO_* constants defined in
-  <zephyr/dt-bindings/gpio/wisblock-io-connector.h>:
+  This binding provides a gpio-nexus mapping for the 25 logical signal pins,
+  where parent pin indices correspond to the WISBLOCK_IO_* constants defined in
+  <zephyr/dt-bindings/gpio/wisblock-io-slot.h>:
 
     0   SW1       User button
     1   TXD0      UART0 TX
@@ -38,6 +37,6 @@ description: |
     23  IO5       General-purpose IO5
     24  IO6       General-purpose IO6
 
-compatible: "wisblock-io-connector"
+compatible: "wisblock-io-slot"
 
 include: [gpio-nexus.yaml, base.yaml]
