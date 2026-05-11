@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 RAKwireless Technology Limited
  */
 
 /dts-v1/;
@@ -60,6 +60,8 @@
 	pinctrl-0 = <&spi2_default>;
 	pinctrl-1 = <&spi2_sleep>;
 	pinctrl-names = "default", "sleep";
+
+	cs-gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
 };
 
 &pdm0 {
@@ -73,15 +75,6 @@
 	status = "okay";
 	#address-cells = <1>;
 	#size-cells = <0>;
-
-	channel@2 {
-		reg = <2>;
-		zephyr,gain = "ADC_GAIN_1_6";
-		zephyr,resolution = <12>;
-		zephyr,reference = "ADC_REF_INTERNAL";
-		zephyr,acquisition-time = <ADC_ACQ_TIME_MAX>;
-		zephyr,input-positive = <NRF_SAADC_AIN2>;
-	};
 
 	channel@3 {
 		reg = <3>;
@@ -109,11 +102,8 @@
 	pinctrl-names = "default", "sleep";
 };
 
-&pwm1 {
-	status = "okay";
-	pinctrl-0 = <&pwm1_default>;
-	pinctrl-1 = <&pwm1_sleep>;
-	pinctrl-names = "default", "sleep";
+&uicr {
+	nfct-pins-as-gpios;
 };
 
 zephyr_udc0: &usbd {
@@ -126,11 +116,3 @@ zephyr_udc0: &usbd {
 };
 
 #include "wisblock.dtsi"
-
-/* 
- * P0.09/P0.10 are NFC antenna pins by default
- * reconfigure as GPIO for WisBlock IO5/IO6
- */
-&uicr {
-	nfct-pins-as-gpios;
-};
