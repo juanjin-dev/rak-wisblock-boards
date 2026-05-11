@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
- * Copyright (c) 2026 Shenzhen RAKwireless Technology Co., Ltd.
+ * Copyright (c) 2026 RAKwireless Technology Limited
  */
 
 /dts-v1/;
@@ -18,21 +18,22 @@
 		zephyr,uart-mcumgr = &cdc_acm_uart0;
 		zephyr,bt-mon-uart = &cdc_acm_uart0;
 		zephyr,bt-c2h-uart = &cdc_acm_uart0;
-		zephyr,display = &oled0;
+		zephyr,display = &ssd1306;
 	};
 
 	aliases {
+		fuel-gauge0 = &board_vbat;
 		pwm-led0 = &board_pwm_led;
 		led0 = &board_gpio_led;
-		sw0 = &gpio_sw1;
-		accel = &lis3dh;
-		gnss = &u_blox_m8;
+		sw0 = &board_sw1;
+		accel0 = &lis3dh;
+		gnss = &zoe_m8q;
 	};
 
-	gpio_keys {
+	board_keys {
 		compatible = "gpio-keys";
 
-		gpio_sw1: gpio_sw1 {
+		board_sw1: board_sw1 {
 			gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;
 			label = "SW1";
 			zephyr,code = <INPUT_KEY_0>;
@@ -71,14 +72,14 @@
 		};
 	};
 
-	board_vdiv: vdiv {
+	board_vdiv: board-vdiv {
 		compatible = "voltage-divider";
 		io-channels = <&adc 3>;
 		output-ohms = <1500000>;
 		full-ohms = <2500000>;
 	};
 	
-	board_vbat: fuel_gauge {
+	board_vbat: board-vbat {
 		compatible = "zephyr,fuel-gauge-composite";
 		source-primary = <&board_vdiv>;
 		device-chemistry = "lithium-ion-polymer";
@@ -99,36 +100,30 @@
 	pinctrl-0 = <&uart1_default>;
 	pinctrl-1 = <&uart1_sleep>;
 	pinctrl-names = "default", "sleep";
-	current-speed = <115200>;
+	current-speed = <9600>;
 
-	u_blox_m8: u_blox_m8 {
-		compatible = "u-blox,m8";
+	zoe_m8q: zoe_m8q {
+		compatible = "gnss-nmea-generic";
 		status = "okay";
 	};
 };
 
 &i2c0 {
+	status = "okay";
 	compatible = "nordic,nrf-twi";
 	pinctrl-0 = <&i2c0_default>;
 	pinctrl-1 = <&i2c0_sleep>;
 	pinctrl-names = "default", "sleep";
-};
-
-&i2c1 {
-	status = "okay";
-	pinctrl-0 = <&i2c1_default>;
-	pinctrl-1 = <&i2c1_sleep>;
-	pinctrl-names = "default", "sleep";
 
 	lis3dh: lis3dh@18 {
-		compatible = "st,lis3dh";
-		reg = <0x18>;
 		status = "okay";
+		compatible = "st,lis2dh";
+		reg = <0x18>;
 
 		irq-gpios = <&gpio0 17 GPIO_ACTIVE_HIGH>;
 	};
 
-	oled0: ssd1306@3c {
+	ssd1306: ssd1306@3c {
 		compatible = "solomon,ssd1306";
 		reg = <0x3c>;
 
@@ -150,10 +145,18 @@
 	};
 };
 
+&i2c1 {
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
+	pinctrl-names = "default", "sleep";
+};
+
 &spi2 {
 	pinctrl-0 = <&spi2_default>;
 	pinctrl-1 = <&spi2_sleep>;
 	pinctrl-names = "default", "sleep";
+
+	cs-gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
 };
 
 &pdm0 {
@@ -167,15 +170,6 @@
 	status = "okay";
 	#address-cells = <1>;
 	#size-cells = <0>;
-
-	channel@2 {
-		reg = <2>;
-		zephyr,gain = "ADC_GAIN_1_6";
-		zephyr,resolution = <12>;
-		zephyr,reference = "ADC_REF_INTERNAL";
-		zephyr,acquisition-time = <ADC_ACQ_TIME_MAX>;
-		zephyr,input-positive = <NRF_SAADC_AIN2>;
-	};
 
 	channel@3 {
 		reg = <3>;
@@ -203,11 +197,8 @@
 	pinctrl-names = "default", "sleep";
 };
 
-&pwm1 {
-	status = "okay";
-	pinctrl-0 = <&pwm1_default>;
-	pinctrl-1 = <&pwm1_sleep>;
-	pinctrl-names = "default", "sleep";
+&uicr {
+	nfct-pins-as-gpios;
 };
 
 zephyr_udc0: &usbd {
@@ -220,11 +211,3 @@ zephyr_udc0: &usbd {
 };
 
 #include "wisblock.dtsi"
-
-/* 
- * P0.09/P0.10 are NFC antenna pins by default
- * reconfigure as GPIO for WisBlock IO5/IO6
- */
-&uicr {
-	nfct-pins-as-gpios;
-};
